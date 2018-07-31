@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.tuzkimo.com/"/>
-  <updated>2018-07-16T08:20:10.806Z</updated>
+  <updated>2018-07-31T09:27:41.867Z</updated>
   <id>http://blog.tuzkimo.com/</id>
   
   <author>
@@ -17,21 +17,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://blog.tuzkimo.com/2018/07/16/hello-world/"/>
-    <id>http://blog.tuzkimo.com/2018/07/16/hello-world/</id>
-    <published>2018-07-16T08:20:10.806Z</published>
-    <updated>2018-07-16T08:20:10.806Z</updated>
+    <title>用 alternativeTo 寻找替换软件</title>
+    <link href="http://blog.tuzkimo.com/2018/07/31/%E7%94%A8%22alternativeTo%22%E5%AF%BB%E6%89%BE%E6%9B%BF%E6%8D%A2%E8%BD%AF%E4%BB%B6/"/>
+    <id>http://blog.tuzkimo.com/2018/07/31/用&quot;alternativeTo&quot;寻找替换软件/</id>
+    <published>2018-07-31T08:16:05.000Z</published>
+    <updated>2018-07-31T09:27:41.867Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
+      &lt;blockquote&gt;
+&lt;p&gt;不知道大家有没有这样的烦恼，在网上看到别人推荐的好软件，然后发现有要收费的、有 Mac/iOS 平台独占的，然后就想如果有类似的替代产品就好了。不经意间发现的 &lt;a href=&quot;https://alternativeto.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;alternativeTo&lt;/a&gt; 完全满足了我的需求。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2018/07/31/Pdz2IP.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
     
     </summary>
     
