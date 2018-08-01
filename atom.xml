@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.tuzkimo.com/"/>
-  <updated>2018-07-31T09:27:41.867Z</updated>
+  <updated>2018-08-01T09:18:55.997Z</updated>
   <id>http://blog.tuzkimo.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用 FileSaver.js 实现客户端文件保存功能</title>
+    <link href="http://blog.tuzkimo.com/2018/08/01/%E7%94%A8-FileSaver-js-%E5%AE%9E%E7%8E%B0%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98%E5%8A%9F%E8%83%BD/"/>
+    <id>http://blog.tuzkimo.com/2018/08/01/用-FileSaver-js-实现客户端文件保存功能/</id>
+    <published>2018-08-01T07:46:46.000Z</published>
+    <updated>2018-08-01T09:18:55.997Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;最近在做前端开发的时候需要实现文件下载功能，秉着不重复开发的理念，找到了一个十分方便的库，就是今天想向大家介绍的 &lt;a href=&quot;https://github.com/eligrey/FileSaver.js/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;FileSaver.js&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;据开发者 &lt;a href=&quot;https://eligrey.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Eli Grey&lt;/a&gt; 的&lt;a href=&quot;https://eligrey.com/blog/saving-generated-files-on-the-client-side/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博文&lt;/a&gt;的说法，原本 W3C 在制定 HTML5 的时候原本是包含 &lt;code&gt;saveAs()&lt;/code&gt; 这个 File API 的，但后来又放弃了，还好作者自己实现了一个，才有现在的 FileSaver.js。&lt;/p&gt;
+&lt;h2 id=&quot;安装方法&quot;&gt;&lt;a href=&quot;#安装方法&quot; class=&quot;headerlink&quot; title=&quot;安装方法&quot;&gt;&lt;/a&gt;安装方法&lt;/h2&gt;&lt;figure class=&quot;hljs highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs sh&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt;# NPM&lt;/span&gt;&lt;br&gt;$ npm install file-saver --save&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-comment&quot;&gt;# NPM 淘宝源&lt;/span&gt;&lt;br&gt;$ cnpm install file-saver --save&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-comment&quot;&gt;# Bower&lt;/span&gt;&lt;br&gt;$ bower install file-saver&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h2&gt;&lt;figure class=&quot;hljs highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs undefined&quot;&gt;FileSaver saveAs(Blob/File data, optional DOMString filename, optional Boolean disableAutoBOM)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://blog.tuzkimo.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>用 alternativeTo 寻找替换软件</title>
