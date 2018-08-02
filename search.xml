@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>用 Spring Initializer 快速构建 Spring Boot 项目</title>
+      <link href="/2018/08/02/%E7%94%A8-Spring-Initializer-%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA-Spring-Boot-%E9%A1%B9%E7%9B%AE/"/>
+      <url>/2018/08/02/%E7%94%A8-Spring-Initializer-%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA-Spring-Boot-%E9%A1%B9%E7%9B%AE/</url>
+      <content type="html"><![CDATA[<blockquote><p>在没有 Spring Boot 以前，构建一个 Spring 项目要花很多时间在配置上，自从有了 Spring Boot，配合官方的脚手架工具，构建一个 Spring 项目就是瞬间的事情，今天要介绍的就是其中一个最容易用的 <a href="https://start.spring.io/" target="_blank" rel="noopener">Spring Initializer</a>。</p></blockquote><p><img src="https://s1.ax1x.com/2018/08/02/P0GsKS.png" alt=""></p><a id="more"></a><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Spring Initializer 是一个在线工具，浏览器直接访问 <a href="https://start.spring.io/" target="_blank" rel="noopener">https://start.spring.io/</a> 就可以用了。</p><h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><ol><li><strong>选择项目管理工具</strong>，支持 <a href="https://maven.apache.org/" target="_blank" rel="noopener">Maven</a> 和 <a href="https://gradle.org/" target="_blank" rel="noopener">Gradle</a>，默认 Maven；</li><li><strong>选择开发语言</strong>，支持 Java、Kotlin 和 Groovy，默认 Java；</li><li><strong>选择 Spring Boot 版本</strong>，默认最新的正式版本；</li><li><strong>输入 Group</strong>；</li><li><strong>输入 Artifact</strong>；</li><li><strong>选择依赖包</strong>，在旁边的搜索框可以快速凭关键字选择需要的依赖包；</li><li><strong>点击 Generate…</strong>，就会生成一个打包好的项目压缩包，解压用 IDE 打开就可以了。</li></ol><p>如果想做更多的配置，点击 <strong><code>Switch to the full version</code></strong> 可以进入高级模式。</p><p><img src="https://s1.ax1x.com/2018/08/02/P0JDiR.png" alt=""></p><p>这样就可以看到更多的配置项了，例如打包方式（支持 Jar 和 War，默认是 Jar）和 JDK 版本。往下拉还可以看到全部支持的依赖包列表，这样就可以更直观地勾选了。</p><p>列表太长就不截图了，说明了很多依赖包都有官方的 Spring Boot 适配版本了，Spring 社区还是一如既往的省心啊。</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>用 FileSaver.js 实现客户端文件保存功能</title>
       <link href="/2018/08/01/%E7%94%A8-FileSaver-js-%E5%AE%9E%E7%8E%B0%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98%E5%8A%9F%E8%83%BD/"/>
       <url>/2018/08/01/%E7%94%A8-FileSaver-js-%E5%AE%9E%E7%8E%B0%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98%E5%8A%9F%E8%83%BD/</url>
@@ -30,16 +45,16 @@
   
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     

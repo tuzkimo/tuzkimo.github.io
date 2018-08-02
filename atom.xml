@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.tuzkimo.com/"/>
-  <updated>2018-08-01T09:18:55.997Z</updated>
+  <updated>2018-08-02T09:10:04.736Z</updated>
   <id>http://blog.tuzkimo.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用 Spring Initializer 快速构建 Spring Boot 项目</title>
+    <link href="http://blog.tuzkimo.com/2018/08/02/%E7%94%A8-Spring-Initializer-%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA-Spring-Boot-%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://blog.tuzkimo.com/2018/08/02/用-Spring-Initializer-快速构建-Spring-Boot-项目/</id>
+    <published>2018-08-02T08:04:52.000Z</published>
+    <updated>2018-08-02T09:10:04.736Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;在没有 Spring Boot 以前，构建一个 Spring 项目要花很多时间在配置上，自从有了 Spring Boot，配合官方的脚手架工具，构建一个 Spring 项目就是瞬间的事情，今天要介绍的就是其中一个最容易用的 &lt;a href=&quot;https://start.spring.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spring Initializer&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2018/08/02/P0GsKS.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Spring Boot" scheme="http://blog.tuzkimo.com/tags/Spring-Boot/"/>
+    
+  </entry>
   
   <entry>
     <title>用 FileSaver.js 实现客户端文件保存功能</title>
