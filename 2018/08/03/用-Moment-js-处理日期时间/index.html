@@ -46,6 +46,9 @@
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
     
     
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
     <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
@@ -79,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>tuzkimo's blog</title>
+    <title>用 Moment.js 处理日期时间 | tuzkimo's blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -101,7 +104,7 @@
   <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
   <ul id="menu">
     
-    <li><a href="/" class="current">首页</a></li>
+    <li><a href="/">首页</a></li>
     
     <li><a href="/archives/">归档</a></li>
     
@@ -124,25 +127,22 @@
         <div class="main-container">
           <div class="content">
             
-
-<div id="index" class="index">
+<div id="post" class="post">
   
-  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
+  <article class="post-article card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/08/03/用-Moment-js-处理日期时间/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="tuzkimo">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="/images/myavatar.png">
+       <meta itemprop="name" content="tuzkimo">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.png">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="tuzkimo's blog">
+       <meta itemprop="name" content="tuzkimo's blog">
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/08/03/用-Moment-js-处理日期时间/" itemprop="url">用 Moment.js 处理日期时间</a>
-      </h1>
+      <h1 class="post-title" itemprop="name headline">用 Moment.js 处理日期时间</h1>
       <div class="post-meta">
         
         <span class="post-date">
@@ -154,13 +154,23 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      
       <blockquote>
 <p>JavaScript 原生处理日期时间的能力比较弱，例如经常要用的格式化功能就没有专门的 API 处理，所以，今天要向大家介绍一个超级好用的日期时间处理的库 <a href="https://momentjs.com/" target="_blank" rel="noopener">Moment.js</a>。</p>
 </blockquote>
 <h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># NPM</span><br>$ npm install moment --save<br><br><span class="hljs-comment"># NPM 淘宝源</span><br>$ cnpm install moment --save<br><br><span class="hljs-comment"># Yarn</span><br>$ yarn add moment<br></code></pre></td></tr></table></figure>
 <h2 id="引入方法"><a href="#引入方法" class="headerlink" title="引入方法"></a>引入方法</h2><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> moment <span class="hljs-keyword">from</span> <span class="hljs-string">'moment'</span><br></code></pre></td></tr></table></figure>
-      
+<a id="more"></a>
+<h2 id="使用例子"><a href="#使用例子" class="headerlink" title="使用例子"></a>使用例子</h2><h3 id="获取当前日期时间"><a href="#获取当前日期时间" class="headerlink" title="获取当前日期时间"></a>获取当前日期时间</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = moment()<br></code></pre></td></tr></table></figure>
+<h3 id="解释字符串"><a href="#解释字符串" class="headerlink" title="解释字符串"></a>解释字符串</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> date = moment(<span class="hljs-string">'2018-08-03'</span>)<br><span class="hljs-keyword">const</span> datetime = moment(<span class="hljs-string">'2018-08-03 16:45:26'</span>)<br><span class="hljs-keyword">const</span> date = moment(<span class="hljs-string">'08-03-2018'</span>, <span class="hljs-string">'MM-DD-YYYY'</span>)    <span class="hljs-comment">// 指定字符串解释格式</span><br></code></pre></td></tr></table></figure>
+<h3 id="格式化日期时间"><a href="#格式化日期时间" class="headerlink" title="格式化日期时间"></a>格式化日期时间</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">moment.format(<span class="hljs-string">'YYYY-MM-DD HH-mm-ss'</span>)    <span class="hljs-comment">// 2018-08-03 16:45:26</span><br>moment.format(<span class="hljs-string">'dddd'</span>)    <span class="hljs-comment">// Friday</span><br></code></pre></td></tr></table></figure>
+<h3 id="计算相对时间"><a href="#计算相对时间" class="headerlink" title="计算相对时间"></a>计算相对时间</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">moment(<span class="hljs-string">'2012'</span>, <span class="hljs-string">'YYYY'</span>).fromNow()    <span class="hljs-comment">// 6 years ago</span><br>moment().startOf(<span class="hljs-string">'day'</span>).fromNow()    <span class="hljs-comment">// 17 hours ago</span><br>moment().endOf(<span class="hljs-string">'day'</span>).fromNow()    <span class="hljs-comment">// in 7 hours</span><br></code></pre></td></tr></table></figure>
+<h3 id="增减日期时间"><a href="#增减日期时间" class="headerlink" title="增减日期时间"></a>增减日期时间</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">moment().add(<span class="hljs-number">7</span>, <span class="hljs-string">'days'</span>)<br>moment().add(<span class="hljs-number">7</span>, <span class="hljs-string">'days'</span>).add(<span class="hljs-number">1</span>, <span class="hljs-string">'months'</span>)<br>moment().add(&#123;<span class="hljs-attr">days</span>:<span class="hljs-number">7</span>,<span class="hljs-attr">months</span>:<span class="hljs-number">1</span>&#125;)<br>moment().subtract(<span class="hljs-number">7</span>, <span class="hljs-string">'days'</span>)<br>moment().subtract(<span class="hljs-number">7</span>, <span class="hljs-string">'days'</span>).add(<span class="hljs-number">1</span>, <span class="hljs-string">'months'</span>)<br>moment().subtract(&#123;<span class="hljs-attr">days</span>:<span class="hljs-number">7</span>,<span class="hljs-attr">months</span>:<span class="hljs-number">1</span>&#125;)<br></code></pre></td></tr></table></figure>
+<h3 id="多语言支持"><a href="#多语言支持" class="headerlink" title="多语言支持"></a>多语言支持</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">moment.locale(<span class="hljs-string">'zh-cn'</span>)    <span class="hljs-comment">// 切换中文</span><br>moment().format(<span class="hljs-string">'ll'</span>)    <span class="hljs-comment">// 2018年8月3日</span><br></code></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Moment.js 的功能十分强大，上面只是很少一部分常用的功能，具体可以上官网 <a href="https://momentjs.com/" target="_blank" rel="noopener">https://momentjs.com/</a> 看，不喜欢看英文的小伙伴还可以看中文官网 <a href="http://momentjs.cn/，就是版本旧了一些。" target="_blank" rel="noopener">http://momentjs.cn/，就是版本旧了一些。</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://momentjs.com/" target="_blank" rel="noopener">Moment.js 官网</a></li>
+</ul>
+
     </main>
     <footer class="post-footer">
       
@@ -176,143 +186,17 @@
     </footer>
   </article>
   
-  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/08/02/用-Spring-Initializer-快速构建-Spring-Boot-项目/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="tuzkimo">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="/images/myavatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="tuzkimo's blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/08/02/用-Spring-Initializer-快速构建-Spring-Boot-项目/" itemprop="url">用 Spring Initializer 快速构建 Spring Boot 项目</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-02T16:04:52+08:00">2018-08-02 16:04:52</time></span>
-        </span>
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <blockquote>
-<p>在没有 Spring Boot 以前，构建一个 Spring 项目要花很多时间在配置上，自从有了 Spring Boot，配合官方的脚手架工具，构建一个 Spring 项目就是瞬间的事情，今天要介绍的就是其中一个最容易用的 <a href="https://start.spring.io/" target="_blank" rel="noopener">Spring Initializer</a>。</p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2018/08/02/P0GsKS.png" alt=""></p>
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/Spring-Boot/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Spring Boot</a>
-        
-      </div>
-      
-    </footer>
-  </article>
   
-  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/08/01/用-FileSaver-js-实现客户端文件保存功能/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="tuzkimo">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="/images/myavatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="tuzkimo's blog">
-      </span>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/08/02/用-Spring-Initializer-快速构建-Spring-Boot-项目/" rel="next" title="用 Spring Initializer 快速构建 Spring Boot 项目"><i class="fas fa-angle-left"></i><span class="nav-title">用 Spring Initializer 快速构建 Spring Boot 项目</span></a>
+      
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/08/01/用-FileSaver-js-实现客户端文件保存功能/" itemprop="url">用 FileSaver.js 实现客户端文件保存功能</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-01T15:46:46+08:00">2018-08-01 15:46:46</time></span>
-        </span>
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
+    <div class="post-nav-prev post-nav-item">
       
-      <blockquote>
-<p>最近在做前端开发的时候需要实现文件下载功能，秉着不重复开发的理念，找到了一个十分方便的库，就是今天想向大家介绍的 <a href="https://github.com/eligrey/FileSaver.js/" target="_blank" rel="noopener">FileSaver.js</a>。</p>
-</blockquote>
-<p>据开发者 <a href="https://eligrey.com/" target="_blank" rel="noopener">Eli Grey</a> 的<a href="https://eligrey.com/blog/saving-generated-files-on-the-client-side/" target="_blank" rel="noopener">博文</a>的说法，原本 W3C 在制定 HTML5 的时候原本是包含 <code>saveAs()</code> 这个 File API 的，但后来又放弃了，还好作者自己实现了一个，才有现在的 FileSaver.js。</p>
-<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># NPM</span><br>$ npm install file-saver --save<br><br><span class="hljs-comment"># NPM 淘宝源</span><br>$ cnpm install file-saver --save<br><br><span class="hljs-comment"># Bower</span><br>$ bower install file-saver<br></code></pre></td></tr></table></figure>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">FileSaver saveAs(Blob/File data, optional DOMString filename, optional Boolean disableAutoBOM)<br></code></pre></td></tr></table></figure>
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/07/31/用-alternativeTo-寻找替换软件/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="tuzkimo">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="/images/myavatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="tuzkimo's blog">
-      </span>
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/07/31/用-alternativeTo-寻找替换软件/" itemprop="url">用 alternativeTo 寻找替换软件</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-31T16:16:05+08:00">2018-07-31 16:16:05</time></span>
-        </span>
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <blockquote>
-<p>不知道大家有没有这样的烦恼，在网上看到别人推荐的好软件，然后发现有要收费的、有 Mac/iOS 平台独占的，然后就想如果有类似的替代产品就好了。不经意间发现的 <a href="https://alternativeto.net/" target="_blank" rel="noopener">alternativeTo</a> 完全满足了我的需求。</p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2018/07/31/Pdz2IP.png" alt=""></p>
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
+  </div>
   
   
 </div>
@@ -372,6 +256,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#安装方法"><span class="toc-text">安装方法</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#引入方法"><span class="toc-text">引入方法</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#使用例子"><span class="toc-text">使用例子</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#获取当前日期时间"><span class="toc-text">获取当前日期时间</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#解释字符串"><span class="toc-text">解释字符串</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#格式化日期时间"><span class="toc-text">格式化日期时间</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#计算相对时间"><span class="toc-text">计算相对时间</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#增减日期时间"><span class="toc-text">增减日期时间</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#多语言支持"><span class="toc-text">多语言支持</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol></div>
+</div>
+
+
+
     
     
     

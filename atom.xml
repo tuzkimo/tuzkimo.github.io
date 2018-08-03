@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.tuzkimo.com/"/>
-  <updated>2018-08-02T09:10:04.736Z</updated>
+  <updated>2018-08-03T09:17:06.289Z</updated>
   <id>http://blog.tuzkimo.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用 Moment.js 处理日期时间</title>
+    <link href="http://blog.tuzkimo.com/2018/08/03/%E7%94%A8-Moment-js-%E5%A4%84%E7%90%86%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4/"/>
+    <id>http://blog.tuzkimo.com/2018/08/03/用-Moment-js-处理日期时间/</id>
+    <published>2018-08-03T08:25:04.000Z</published>
+    <updated>2018-08-03T09:17:06.289Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;JavaScript 原生处理日期时间的能力比较弱，例如经常要用的格式化功能就没有专门的 API 处理，所以，今天要向大家介绍一个超级好用的日期时间处理的库 &lt;a href=&quot;https://momentjs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moment.js&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;安装方法&quot;&gt;&lt;a href=&quot;#安装方法&quot; class=&quot;headerlink&quot; title=&quot;安装方法&quot;&gt;&lt;/a&gt;安装方法&lt;/h2&gt;&lt;figure class=&quot;hljs highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs sh&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt;# NPM&lt;/span&gt;&lt;br&gt;$ npm install moment --save&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-comment&quot;&gt;# NPM 淘宝源&lt;/span&gt;&lt;br&gt;$ cnpm install moment --save&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-comment&quot;&gt;# Yarn&lt;/span&gt;&lt;br&gt;$ yarn add moment&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;引入方法&quot;&gt;&lt;a href=&quot;#引入方法&quot; class=&quot;headerlink&quot; title=&quot;引入方法&quot;&gt;&lt;/a&gt;引入方法&lt;/h2&gt;&lt;figure class=&quot;hljs highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs js&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; moment &lt;span class=&quot;hljs-keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&#39;moment&#39;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://blog.tuzkimo.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>用 Spring Initializer 快速构建 Spring Boot 项目</title>

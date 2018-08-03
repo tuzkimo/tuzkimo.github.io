@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>用 Moment.js 处理日期时间</title>
+      <link href="/2018/08/03/%E7%94%A8-Moment-js-%E5%A4%84%E7%90%86%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4/"/>
+      <url>/2018/08/03/%E7%94%A8-Moment-js-%E5%A4%84%E7%90%86%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4/</url>
+      <content type="html"><![CDATA[<blockquote><p>JavaScript 原生处理日期时间的能力比较弱，例如经常要用的格式化功能就没有专门的 API 处理，所以，今天要向大家介绍一个超级好用的日期时间处理的库 <a href="https://momentjs.com/" target="_blank" rel="noopener">Moment.js</a>。</p></blockquote><h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># NPM</span><br>$ npm install moment --save<br><br><span class="hljs-comment"># NPM 淘宝源</span><br>$ cnpm install moment --save<br><br><span class="hljs-comment"># Yarn</span><br>$ yarn add moment<br></code></pre></td></tr></table></figure><h2 id="引入方法"><a href="#引入方法" class="headerlink" title="引入方法"></a>引入方法</h2><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> moment <span class="hljs-keyword">from</span> <span class="hljs-string">'moment'</span><br></code></pre></td></tr></table></figure><a id="more"></a><h2 id="使用例子"><a href="#使用例子" class="headerlink" title="使用例子"></a>使用例子</h2><h3 id="获取当前日期时间"><a href="#获取当前日期时间" class="headerlink" title="获取当前日期时间"></a>获取当前日期时间</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = moment()<br></code></pre></td></tr></table></figure><h3 id="解释字符串"><a href="#解释字符串" class="headerlink" title="解释字符串"></a>解释字符串</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> date = moment(<span class="hljs-string">'2018-08-03'</span>)<br><span class="hljs-keyword">const</span> datetime = moment(<span class="hljs-string">'2018-08-03 16:45:26'</span>)<br><span class="hljs-keyword">const</span> date = moment(<span class="hljs-string">'08-03-2018'</span>, <span class="hljs-string">'MM-DD-YYYY'</span>)    <span class="hljs-comment">// 指定字符串解释格式</span><br></code></pre></td></tr></table></figure><h3 id="格式化日期时间"><a href="#格式化日期时间" class="headerlink" title="格式化日期时间"></a>格式化日期时间</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">moment.format(<span class="hljs-string">'YYYY-MM-DD HH-mm-ss'</span>)    <span class="hljs-comment">// 2018-08-03 16:45:26</span><br>moment.format(<span class="hljs-string">'dddd'</span>)    <span class="hljs-comment">// Friday</span><br></code></pre></td></tr></table></figure><h3 id="计算相对时间"><a href="#计算相对时间" class="headerlink" title="计算相对时间"></a>计算相对时间</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">moment(<span class="hljs-string">'2012'</span>, <span class="hljs-string">'YYYY'</span>).fromNow()    <span class="hljs-comment">// 6 years ago</span><br>moment().startOf(<span class="hljs-string">'day'</span>).fromNow()    <span class="hljs-comment">// 17 hours ago</span><br>moment().endOf(<span class="hljs-string">'day'</span>).fromNow()    <span class="hljs-comment">// in 7 hours</span><br></code></pre></td></tr></table></figure><h3 id="增减日期时间"><a href="#增减日期时间" class="headerlink" title="增减日期时间"></a>增减日期时间</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">moment().add(<span class="hljs-number">7</span>, <span class="hljs-string">'days'</span>)<br>moment().add(<span class="hljs-number">7</span>, <span class="hljs-string">'days'</span>).add(<span class="hljs-number">1</span>, <span class="hljs-string">'months'</span>)<br>moment().add(&#123;<span class="hljs-attr">days</span>:<span class="hljs-number">7</span>,<span class="hljs-attr">months</span>:<span class="hljs-number">1</span>&#125;)<br>moment().subtract(<span class="hljs-number">7</span>, <span class="hljs-string">'days'</span>)<br>moment().subtract(<span class="hljs-number">7</span>, <span class="hljs-string">'days'</span>).add(<span class="hljs-number">1</span>, <span class="hljs-string">'months'</span>)<br>moment().subtract(&#123;<span class="hljs-attr">days</span>:<span class="hljs-number">7</span>,<span class="hljs-attr">months</span>:<span class="hljs-number">1</span>&#125;)<br></code></pre></td></tr></table></figure><h3 id="多语言支持"><a href="#多语言支持" class="headerlink" title="多语言支持"></a>多语言支持</h3><figure class="hljs highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">moment.locale(<span class="hljs-string">'zh-cn'</span>)    <span class="hljs-comment">// 切换中文</span><br>moment().format(<span class="hljs-string">'ll'</span>)    <span class="hljs-comment">// 2018年8月3日</span><br></code></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Moment.js 的功能十分强大，上面只是很少一部分常用的功能，具体可以上官网 <a href="https://momentjs.com/" target="_blank" rel="noopener">https://momentjs.com/</a> 看，不喜欢看英文的小伙伴还可以看中文官网 <a href="http://momentjs.cn/，就是版本旧了一些。" target="_blank" rel="noopener">http://momentjs.cn/，就是版本旧了一些。</a></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://momentjs.com/" target="_blank" rel="noopener">Moment.js 官网</a></li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>用 Spring Initializer 快速构建 Spring Boot 项目</title>
       <link href="/2018/08/02/%E7%94%A8-Spring-Initializer-%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA-Spring-Boot-%E9%A1%B9%E7%9B%AE/"/>
       <url>/2018/08/02/%E7%94%A8-Spring-Initializer-%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA-Spring-Boot-%E9%A1%B9%E7%9B%AE/</url>
@@ -45,13 +60,6 @@
   
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
       <title>about</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -62,6 +70,13 @@
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
