@@ -164,17 +164,18 @@
 <p>如果报 <code>INTERNET NOT REACHABLE!</code> 错误，说明你需要一个梯子。 :)</p>
 </blockquote>
 <h3 id="安装-Spring-Boot-CLI"><a href="#安装-Spring-Boot-CLI" class="headerlink" title="安装 Spring Boot CLI"></a>安装 Spring Boot CLI</h3><figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ sdk install springboot<br>$ spring --version    <span class="hljs-comment"># 正常显示版本信息表示安装成功</span><br></code></pre></td></tr></table></figure>
-<h2 id="使用例子"><a href="#使用例子" class="headerlink" title="使用例子"></a>使用例子</h2><p>Spring Boot CLI 有很多功能，这里只介绍新建 Spring Boot 项目的功能。</p>
-<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 查看所有功能</span><br>$ spring --<span class="hljs-built_in">help</span><br><br><span class="hljs-comment"># 按默认配置新建项目</span><br>$ spring init<br><br><span class="hljs-comment"># spring init 使用帮助</span><br>$ spring <span class="hljs-built_in">help</span> init<br><br><span class="hljs-comment"># 新建一个包含 Web 开发相关依赖的项目并打包成名为 my-app.zip 的压缩包</span><br>$ spring init -d=web my-app.zip<br><br><span class="hljs-comment"># 新建一个包含 Web 和 JPA 相关依赖，使用 Gradle 进行项目管理的项目，并解压到名为 my-dir 的目录</span><br>$ spring init -d=web,jpa --build=gradle my-dir<br></code></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果你跟我一样更加偏爱使用命令行，Spring Boot CLI 相对 Spring Initializer 会是更好的选择。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli" target="_blank" rel="noopener">Spring Boot CLI 官方文档</a></li>
-<li><a href="https://sdkman.io/install" target="_blank" rel="noopener">SDKMAN! 官方安装文档</a></li>
-</ul>
-
       
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Spring-Boot/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Spring Boot</a>
+        
+      </div>
       
     </footer>
   </article>

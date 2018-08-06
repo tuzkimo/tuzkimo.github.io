@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.tuzkimo.com/"/>
-  <updated>2018-08-06T08:41:05.500Z</updated>
+  <updated>2018-08-06T08:45:31.963Z</updated>
   <id>http://blog.tuzkimo.com/</id>
   
   <author>
@@ -21,21 +21,24 @@
     <link href="http://blog.tuzkimo.com/2018/08/06/%E7%94%A8-Spring-Boot-CLI-%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA-Spring-Boot-%E9%A1%B9%E7%9B%AE/"/>
     <id>http://blog.tuzkimo.com/2018/08/06/用-Spring-Boot-CLI-快速构建-Spring-Boot-项目/</id>
     <published>2018-08-06T08:04:40.000Z</published>
-    <updated>2018-08-06T08:41:05.500Z</updated>
+    <updated>2018-08-06T08:45:31.963Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;之前介绍过用 &lt;a href=&quot;https://start.spring.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spring Initializer&lt;/a&gt; 来快速构建 Spring Boot
-        
-      
+      &lt;blockquote&gt;
+&lt;p&gt;之前介绍过用 &lt;a href=&quot;https://start.spring.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spring Initializer&lt;/a&gt; 来快速构建 Spring Boot 项目，今天向大家介绍另一款官方的命令行脚手架工具 - Spring Boot CLI。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;安装方法&quot;&gt;&lt;a href=&quot;#安装方法&quot; class=&quot;headerlink&quot; title=&quot;安装方法&quot;&gt;&lt;/a&gt;安装方法&lt;/h2&gt;&lt;p&gt;Spring Boot CLI 有多种安装方式，下面介绍的是用 &lt;a href=&quot;http://sdkman.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SDKMAN!&lt;/a&gt; 安装的方法，操作系统是 Dedian 8。SDKMAN! 是一个很好用的开发包管理工具，以后有机会会向大家单独介绍。&lt;/p&gt;
+&lt;h3 id=&quot;安装-SDKMAN&quot;&gt;&lt;a href=&quot;#安装-SDKMAN&quot; class=&quot;headerlink&quot; title=&quot;安装 SDKMAN!&quot;&gt;&lt;/a&gt;安装 SDKMAN!&lt;/h3&gt;&lt;figure class=&quot;hljs highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs sh&quot;&gt;$ curl -s &lt;span class=&quot;hljs-string&quot;&gt;&quot;https://get.sdkman.io&quot;&lt;/span&gt; | bash&lt;br&gt;$ &lt;span class=&quot;hljs-built_in&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&quot;&lt;span class=&quot;hljs-variable&quot;&gt;$HOME&lt;/span&gt;/.sdkman/bin/sdkman-init.sh&quot;&lt;/span&gt;&lt;br&gt;$ sdk version    &lt;span class=&quot;hljs-comment&quot;&gt;# 正常显示版本信息表示安装成功&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果报 &lt;code&gt;INTERNET NOT REACHABLE!&lt;/code&gt; 错误，说明你需要一个梯子。 :)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;安装-Spring-Boot-CLI&quot;&gt;&lt;a href=&quot;#安装-Spring-Boot-CLI&quot; class=&quot;headerlink&quot; title=&quot;安装 Spring Boot CLI&quot;&gt;&lt;/a&gt;安装 Spring Boot CLI&lt;/h3&gt;&lt;figure class=&quot;hljs highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs sh&quot;&gt;$ sdk install springboot&lt;br&gt;$ spring --version    &lt;span class=&quot;hljs-comment&quot;&gt;# 正常显示版本信息表示安装成功&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
+    
+      <category term="Spring Boot" scheme="http://blog.tuzkimo.com/tags/Spring-Boot/"/>
     
   </entry>
   
