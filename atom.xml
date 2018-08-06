@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.tuzkimo.com/"/>
-  <updated>2018-08-03T09:17:06.289Z</updated>
+  <updated>2018-08-06T08:41:05.500Z</updated>
   <id>http://blog.tuzkimo.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用 Spring Boot CLI 快速构建 Spring Boot 项目</title>
+    <link href="http://blog.tuzkimo.com/2018/08/06/%E7%94%A8-Spring-Boot-CLI-%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA-Spring-Boot-%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://blog.tuzkimo.com/2018/08/06/用-Spring-Boot-CLI-快速构建-Spring-Boot-项目/</id>
+    <published>2018-08-06T08:04:40.000Z</published>
+    <updated>2018-08-06T08:41:05.500Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;之前介绍过用 &lt;a href=&quot;https://start.spring.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spring Initializer&lt;/a&gt; 来快速构建 Spring Boot
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>用 Moment.js 处理日期时间</title>
