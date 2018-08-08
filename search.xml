@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>用 Zeal 快速查询 API 文档</title>
+      <link href="/2018/08/08/%E7%94%A8-Zeal-%E5%BF%AB%E9%80%9F%E6%9F%A5%E8%AF%A2-API-%E6%96%87%E6%A1%A3/"/>
+      <url>/2018/08/08/%E7%94%A8-Zeal-%E5%BF%AB%E9%80%9F%E6%9F%A5%E8%AF%A2-API-%E6%96%87%E6%A1%A3/</url>
+      <content type="html"><![CDATA[<blockquote><p>对于程序员来说，每天的工作总少不了查询 API 文档，一款好用的离线 API 文档查询工具可以有效的提升开发效率。MAC/iOS 平台有著名的 <a href="https://kapeli.com/dash" target="_blank" rel="noopener">Dash</a>，可惜不是跨平台而且不是开源免费的。还好的是还有一款开源免费的支持 Win/Linux 平台的替代品 - <a href="https://zealdocs.org/" target="_blank" rel="noopener">Zeal</a>。</p></blockquote><p>Zeal 跟 Dash 基本上一模一样，都是离线查询，都支持 IDE 集成，用的是一样的数据源。对于想我一样吃不起苹果的穷 B 程序狗简直就是福音。 :)</p><h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><p>登录主页 <a href="https://zealdocs.org/" target="_blank" rel="noopener">https://zealdocs.org/</a> ，根据自己的操作系统选择对应的安装包下载安装即可。</p><p><img src="https://s1.ax1x.com/2018/08/08/PsHSgg.png" alt=""></p><a id="more"></a><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="下载离线文档"><a href="#下载离线文档" class="headerlink" title="下载离线文档"></a>下载离线文档</h3><p>点击 <code>Tools</code> -&gt; <code>Docset...</code> -&gt; <code>Available</code>，在列表中选择需要的开发语言或库的名字，点击 <code>Download</code> 即可。</p><p><img src="https://s1.ax1x.com/2018/08/08/PsHnv4.png" alt=""></p><h3 id="快速查询"><a href="#快速查询" class="headerlink" title="快速查询"></a>快速查询</h3><p>在左上角的输入框内输入要查询的关键字即可，例如 <code>date</code>。如果想指定某一个语言或库，加上该语言或库的名字和冒号作为前缀即可，例如 <code>javascript:date</code>。</p><p><img src="https://s1.ax1x.com/2018/08/08/PsHDat.png" alt=""></p><h3 id="IDE-集成"><a href="#IDE-集成" class="headerlink" title="IDE 集成"></a>IDE 集成</h3><p>登录 <a href="https://zealdocs.org/usage.html" target="_blank" rel="noopener">https://zealdocs.org/usage.html</a> ，找到对应 IDE 的插件下载地址，下载安装即可。</p><p><img src="https://s1.ax1x.com/2018/08/08/PsHRMQ.png" alt=""></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://zealdocs.org/usage.html" target="_blank" rel="noopener">官方使用文档</a></li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Tool </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>用 Spring Boot CLI 快速构建 Spring Boot 项目</title>
       <link href="/2018/08/06/%E7%94%A8-Spring-Boot-CLI-%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA-Spring-Boot-%E9%A1%B9%E7%9B%AE/"/>
       <url>/2018/08/06/%E7%94%A8-Spring-Boot-CLI-%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA-Spring-Boot-%E9%A1%B9%E7%9B%AE/</url>
@@ -68,6 +83,12 @@
       <url>/2018/07/31/%E7%94%A8-alternativeTo-%E5%AF%BB%E6%89%BE%E6%9B%BF%E6%8D%A2%E8%BD%AF%E4%BB%B6/</url>
       <content type="html"><![CDATA[<blockquote><p>不知道大家有没有这样的烦恼，在网上看到别人推荐的好软件，然后发现有要收费的、有 Mac/iOS 平台独占的，然后就想如果有类似的替代产品就好了。不经意间发现的 <a href="https://alternativeto.net/" target="_blank" rel="noopener">alternativeTo</a> 完全满足了我的需求。</p></blockquote><p><img src="https://s1.ax1x.com/2018/07/31/Pdz2IP.png" alt=""></p><a id="more"></a><p>alternativeTo 是一个网页应用，使用非常的简单，直接用浏览器访问 <a href="https://alternativeto.net/" target="_blank" rel="noopener">https://alternativeto.net/</a> ，在右上角的搜索框输入被替代的软件的文字，就会列出推荐的软件。</p><p>例如之前想找 <a href="https://kapeli.com/dash" target="_blank" rel="noopener">Dash</a> 的替代软件，一搜，<a href="https://zealdocs.org/" target="_blank" rel="noopener">Zeal</a> 妥妥的排第一。</p><p><img src="https://s1.ax1x.com/2018/07/31/PwSKeA.png" alt=""></p><p>结果列表默认按受欢迎程度排序，基本上排第一的都不坑。列表还提供了按平台、授权方式或标签筛选的功能，某些结果还会有热心群众的评论，可以给你更充分的参考意见。</p><p>当然了，如果你也是热心群众，就注册个账号发表你的高见吧。</p>]]></content>
       
+      
+        <tags>
+            
+            <tag> Tool </tag>
+            
+        </tags>
       
     </entry>
     
