@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.tuzkimo.com/"/>
-  <updated>2018-08-08T09:21:47.246Z</updated>
+  <updated>2018-08-15T03:54:04.215Z</updated>
   <id>http://blog.tuzkimo.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用 Spotify Docker Maven 插件快速生成 Spring Boot 应用的 Docker 镜像</title>
+    <link href="http://blog.tuzkimo.com/2018/08/15/Spotifys-Docker-Maven-%E6%8F%92%E4%BB%B6%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90-Spring-Boot-%E5%BA%94%E7%94%A8%E7%9A%84-Docker-%E9%95%9C%E5%83%8F/"/>
+    <id>http://blog.tuzkimo.com/2018/08/15/Spotifys-Docker-Maven-插件快速生成-Spring-Boot-应用的-Docker-镜像/</id>
+    <published>2018-08-15T04:21:05.000Z</published>
+    <updated>2018-08-15T03:54:04.215Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Spring Boot 是为云开发而生的，而现在云开发的部署方式基本上都是以 Docker 镜像为载体。用 &lt;a href=&quot;https://github.com/spotify/docker-maven-plugin&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spotify’s Docker Maven 插件&lt;/a&gt; 可以快速生成 Spring Boot 应用的 Docker 镜像，提高开发效率。下面是一个简单的例子。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;软件需求&quot;&gt;&lt;a href=&quot;#软件需求&quot; class=&quot;headerlink&quot; title=&quot;软件需求&quot;&gt;&lt;/a&gt;软件需求&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt;，要生成 Docker 镜像要现在本地安装 Docker 软件，官方有十分详细的安装教程，地址是: &lt;a href=&quot;https://docs.docker.com/install/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://docs.docker.com/install/&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maven&lt;/strong&gt;，Spotify’s Docker Maven 插件看名字就知道是一个 Maven 插件，所以本地还要先安装一个 Maven，官方安装教程地址是: &lt;a href=&quot;https://maven.apache.org/install.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://maven.apache.org/install.html&lt;/a&gt; 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;准备-Spring-Boot-应用&quot;&gt;&lt;a href=&quot;#准备-Spring-Boot-应用&quot; class=&quot;headerlink&quot; title=&quot;准备 Spring Boot 应用&quot;&gt;&lt;/a&gt;准备 Spring Boot 应用&lt;/h2&gt;&lt;p&gt;出于简化的目的，这里就直接用 Spring 官方的 &lt;a href=&quot;http://spring.io/guides/gs/rest-service/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hello World&lt;/a&gt; 项目。&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs sh&quot;&gt;$ git &lt;span class=&quot;hljs-built_in&quot;&gt;clone&lt;/span&gt; git@ugithub.com:spring-guides/gs-rest-service.git&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;项目克隆完毕后，用 IDE 打开 &lt;code&gt;gs-rest-service/complete/pom.xml&lt;/code&gt; 载入 Maven 项目。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Spring" scheme="http://blog.tuzkimo.com/tags/Spring/"/>
+    
+      <category term="Docker" scheme="http://blog.tuzkimo.com/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>用 Zeal 快速查询 API 文档</title>

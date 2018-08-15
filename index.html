@@ -129,6 +129,62 @@
   
   <article class="index-article card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/08/15/Spotifys-Docker-Maven-插件快速生成-Spring-Boot-应用的-Docker-镜像/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="tuzkimo">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="tuzkimo's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/08/15/Spotifys-Docker-Maven-插件快速生成-Spring-Boot-应用的-Docker-镜像/" itemprop="url">用 Spotify Docker Maven 插件快速生成 Spring Boot 应用的 Docker 镜像</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-15T12:21:05+08:00">2018-08-15 12:21:05</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <blockquote>
+<p>Spring Boot 是为云开发而生的，而现在云开发的部署方式基本上都是以 Docker 镜像为载体。用 <a href="https://github.com/spotify/docker-maven-plugin" target="_blank" rel="noopener">Spotify’s Docker Maven 插件</a> 可以快速生成 Spring Boot 应用的 Docker 镜像，提高开发效率。下面是一个简单的例子。</p>
+</blockquote>
+<h2 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h2><ul>
+<li><strong>Docker</strong>，要生成 Docker 镜像要现在本地安装 Docker 软件，官方有十分详细的安装教程，地址是: <a href="https://docs.docker.com/install/" target="_blank" rel="noopener">https://docs.docker.com/install/</a>;</li>
+<li><strong>Maven</strong>，Spotify’s Docker Maven 插件看名字就知道是一个 Maven 插件，所以本地还要先安装一个 Maven，官方安装教程地址是: <a href="https://maven.apache.org/install.html" target="_blank" rel="noopener">https://maven.apache.org/install.html</a> 。</li>
+</ul>
+<h2 id="准备-Spring-Boot-应用"><a href="#准备-Spring-Boot-应用" class="headerlink" title="准备 Spring Boot 应用"></a>准备 Spring Boot 应用</h2><p>出于简化的目的，这里就直接用 Spring 官方的 <a href="http://spring.io/guides/gs/rest-service/" target="_blank" rel="noopener">Hello World</a> 项目。</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ git <span class="hljs-built_in">clone</span> git@ugithub.com:spring-guides/gs-rest-service.git<br></code></pre></td></tr></table></figure>
+<p>项目克隆完毕后，用 IDE 打开 <code>gs-rest-service/complete/pom.xml</code> 载入 Maven 项目。</p>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Spring/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Spring</a>
+        
+        <a class="post-tag button" href="/tags/Docker/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/08/08/用-Zeal-快速查询-API-文档/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="tuzkimo">
@@ -453,7 +509,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">6</a></div>
+      <div><a href="/archives/">7</a></div>
     </div>
     
     
@@ -471,7 +527,7 @@
     
     <div class="tags-count">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">3</a></div>
+      <div><a href="/tags/">5</a></div>
     </div>
     
   </div>
