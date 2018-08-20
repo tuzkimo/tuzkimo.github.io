@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="JAVA, Spring, Vue, Python">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="tuzkimo's blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>打造带 Java 内核的 Jupyter Notebook Docker 镜像 | tuzkimo's blog</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">tuzkimo's blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+      
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+    <li><a href="/categories/">分类</a></li>
+    
+    <li><a href="/tags/">标签</a></li>
+    
+    <li><a href="/about/">关于</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/08/17/打造带-Java-内核的-Jupyter-Notebook-Docker-镜像/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="tuzkimo">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="tuzkimo's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">打造带 Java 内核的 Jupyter Notebook Docker 镜像</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-17T14:19:24+08:00">2018-08-17 14:19:24</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <blockquote>
+<p>用过 Python 的应该都用过 <a href="http://jupyter.org/" target="_blank" rel="noopener">Jupyter</a>。简单来说，Jupyter 是一个写文档的工具，写出来的文档里面包含可以直接运行的代码。Jupyter 主要用于数据分析和机器学习，所以默认支持的语言是 Python 和 R 之类的。对于 Java 开发者来说，由于 JDK9 开始终于有了名为 JShell 的 PREL，再加上热心大神开发了对应的内核，我们也可以自己动手打造一个可以运行 Java 代码的 Jupyter。</p>
+</blockquote>
+<p>Jupyter 是一个 Web 应用，所以我最终的目的是要打造一个 Docker 镜像。这样就可以方便的部署到云上，以后找个能上网的设备就可以随时写代码了。</p>
+<h2 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h2><ul>
+<li><strong>Docker</strong>，官方安装教程地址: <a href="https://docs.docker.com/install/" target="_blank" rel="noopener">https://docs.docker.com/install/</a> 。</li>
+</ul>
+<a id="more"></a>
+<h2 id="制作流程"><a href="#制作流程" class="headerlink" title="制作流程"></a>制作流程</h2><h3 id="编写-Dockerfile-文件"><a href="#编写-Dockerfile-文件" class="headerlink" title="编写 Dockerfile 文件"></a>编写 Dockerfile 文件</h3><p>新建 <code>Dockerfile</code> 文件，并输入以下内容：</p>
+<figure class="hljs highlight Dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Dockerfile"><span class="hljs-comment"># 选用官方 minimal 版本镜像作为基底</span><br><span class="hljs-keyword">FROM</span> jupyter/minimal-notebook<br><br><span class="hljs-comment"># 以下操作需要 root 权限</span><br><span class="hljs-keyword">USER</span> root<br><br><span class="hljs-comment"># Java 内核要求 JDK 版本不小于 9</span><br><span class="hljs-keyword">RUN</span> apt-get update &amp;&amp; apt-get install -yq openjdk-11-jdk<br><br><span class="hljs-comment"># 安装 Java 内核，最新版本 v1.1.1</span><br><span class="hljs-keyword">RUN</span> mkdir -p /tmp/ijava &amp;&amp; \<br>    cd /tmp/ijava &amp;&amp; \<br>    wget https://github.com/SpencerPark/IJava/releases/download/v1.1.1/ijava-1.1.1.zip &amp;&amp; \<br>    unzip ijava-1.1.1.zip &amp;&amp; \<br>    python install.py --sys-prefix &amp;&amp; \<br>    rm /tmp/ijava -r<br></code></pre></td></tr></table></figure>
+<p>Jupyter 有自己的<a href="https://github.com/jupyter/docker-stacks" target="_blank" rel="noopener">官方 Docker 镜像</a>，分 base, minimal, scipy, r, tensorflow, datascience, pyspark 和 all-spark 8 个版本。其中除了 base 和 minimal，其它都是在 minimal 的基础上针对不同用途添加对应的库制作而成的。这里出于简化和最小化的目的，选用 minimal 作为基础镜像进行制作。</p>
+<p>由于 JDK9 开始才支持 PERL，所以 Java 内核要求 JDK 版本不小于 9。官方镜像用的都是 Ubuntu 的 Linux 镜像，而且最新的镜像都已经上 18.04 的版本。所以这里直接用 <code>apt</code> 安装最新的 <code>openjdk-11-jdk</code>。</p>
+<blockquote>
+<p>虽然名字是 <code>openjdk-11-jdk</code>，但通过 <code>java -version</code> 可以看到还是 JDK10。</p>
+</blockquote>
+<p>Jupyter 官方没有出 Java 内核，这里用到官方推荐的第三方内核 <a href="https://github.com/SpencerPark/IJava" target="_blank" rel="noopener">IJava</a></p>
+<h3 id="制作-Docker-镜像"><a href="#制作-Docker-镜像" class="headerlink" title="制作 Docker 镜像"></a>制作 Docker 镜像</h3><p>这 <code>Dockerfile</code> 所在的文件夹运行以下指令:</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ docker image build -t tuzkimo/jupyter-java .<br></code></pre></td></tr></table></figure>
+<p>-t 用于指定 Docker 镜像的标签名，大家可以改用自己喜欢的名字。不要忘了指令最后是有一个点的。</p>
+<h3 id="运行-Docker-镜像实例"><a href="#运行-Docker-镜像实例" class="headerlink" title="运行 Docker 镜像实例"></a>运行 Docker 镜像实例</h3><p>个人比较喜欢用 <code>docker-compose</code> 运行 Docker 镜像，就算只是一个单独的服务。</p>
+<figure class="hljs highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">version:</span> <span class="hljs-string">'2'</span><br><span class="hljs-attr">services:</span><br><span class="hljs-attr">    jupyter-java:</span><br><span class="hljs-attr">        container_name:</span> <span class="hljs-string">jupyter-java</span><br><span class="hljs-attr">        image:</span> <span class="hljs-string">tuzkimo/jupyter-java</span><br><span class="hljs-attr">        ports:</span><br><span class="hljs-bullet">            -</span> <span class="hljs-number">8888</span><span class="hljs-string">:8888</span><br><span class="hljs-attr">        volumes:</span><br><span class="hljs-bullet">            -</span> <span class="hljs-string">./work:/home/jovyan/work</span><br><span class="hljs-attr">        command:</span> <span class="hljs-string">&gt;<br>            start-notebook.sh<br>            --NotebookApp.password='sha1:772f104e6c00:fd76619ae92f722866127bb59f64d9b8702385b0'<br></span><span class="hljs-attr">        restart:</span> <span class="hljs-string">always</span><br></code></pre></td></tr></table></figure>
+<p>这里我用到入口程序的 <code>--NotebookApp.password</code> 参数直接设定登录密码。这里用到的是加密而且散列处理后的密码，准备密码的方法可以点<a href="https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#preparing-a-hashed-password" target="_blank" rel="noopener">这里</a>看官方文档。</p>
+<p>最后输入以下指令运行镜像：</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ docker-compose up -d<br></code></pre></td></tr></table></figure>
+<p>我们打开浏览器访问 <code>http://localhost:8888</code>，如果看到登录窗代表运行成功，输入设定好的密码就可以愉快使用了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://s1.ax1x.com/2018/08/20/Ph4F6f.png" alt=""></p>
+<p>效果还是不错的。:)</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Java/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Java</a>
+        
+        <a class="post-tag button" href="/tags/Jupyter/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Jupyter</a>
+        
+        <a class="post-tag button" href="/tags/Docker/" style="background: #47aaff;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/08/15/Spotifys-Docker-Maven-插件快速生成-Spring-Boot-应用的-Docker-镜像/" rel="next" title="用 Spotify Docker Maven 插件快速生成 Spring Boot 应用的 Docker 镜像"><i class="fas fa-angle-left"></i><span class="nav-title">用 Spotify Docker Maven 插件快速生成 Spring Boot 应用的 Docker 镜像</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.png" alt="tuzkimo">
+  
+  <h1 class="author-name">tuzkimo</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">8</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">0</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">7</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#软件需求"><span class="toc-text">软件需求</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#制作流程"><span class="toc-text">制作流程</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#编写-Dockerfile-文件"><span class="toc-text">编写 Dockerfile 文件</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#制作-Docker-镜像"><span class="toc-text">制作 Docker 镜像</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#运行-Docker-镜像实例"><span class="toc-text">运行 Docker 镜像实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/tuzkimo" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">tuzkimo</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+        
+<div class="busuanzi">
+  <span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv"></span></span>
+</div>
+
+
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

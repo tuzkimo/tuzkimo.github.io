@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.tuzkimo.com/"/>
-  <updated>2018-08-15T04:33:10.309Z</updated>
+  <updated>2018-08-20T09:24:06.282Z</updated>
   <id>http://blog.tuzkimo.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>打造带 Java 内核的 Jupyter Notebook Docker 镜像</title>
+    <link href="http://blog.tuzkimo.com/2018/08/17/%E6%89%93%E9%80%A0%E5%B8%A6-Java-%E5%86%85%E6%A0%B8%E7%9A%84-Jupyter-Notebook-Docker-%E9%95%9C%E5%83%8F/"/>
+    <id>http://blog.tuzkimo.com/2018/08/17/打造带-Java-内核的-Jupyter-Notebook-Docker-镜像/</id>
+    <published>2018-08-17T06:19:24.000Z</published>
+    <updated>2018-08-20T09:24:06.282Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;用过 Python 的应该都用过 &lt;a href=&quot;http://jupyter.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jupyter&lt;/a&gt;。简单来说，Jupyter 是一个写文档的工具，写出来的文档里面包含可以直接运行的代码。Jupyter 主要用于数据分析和机器学习，所以默认支持的语言是 Python 和 R 之类的。对于 Java 开发者来说，由于 JDK9 开始终于有了名为 JShell 的 PREL，再加上热心大神开发了对应的内核，我们也可以自己动手打造一个可以运行 Java 代码的 Jupyter。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Jupyter 是一个 Web 应用，所以我最终的目的是要打造一个 Docker 镜像。这样就可以方便的部署到云上，以后找个能上网的设备就可以随时写代码了。&lt;/p&gt;
+&lt;h2 id=&quot;软件需求&quot;&gt;&lt;a href=&quot;#软件需求&quot; class=&quot;headerlink&quot; title=&quot;软件需求&quot;&gt;&lt;/a&gt;软件需求&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt;，官方安装教程地址: &lt;a href=&quot;https://docs.docker.com/install/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://docs.docker.com/install/&lt;/a&gt; 。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://blog.tuzkimo.com/tags/Java/"/>
+    
+      <category term="Jupyter" scheme="http://blog.tuzkimo.com/tags/Jupyter/"/>
+    
+      <category term="Docker" scheme="http://blog.tuzkimo.com/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>用 Spotify Docker Maven 插件快速生成 Spring Boot 应用的 Docker 镜像</title>
@@ -39,9 +67,9 @@
     </summary>
     
     
-      <category term="Spring" scheme="http://blog.tuzkimo.com/tags/Spring/"/>
-    
       <category term="Docker" scheme="http://blog.tuzkimo.com/tags/Docker/"/>
+    
+      <category term="Spring" scheme="http://blog.tuzkimo.com/tags/Spring/"/>
     
   </entry>
   

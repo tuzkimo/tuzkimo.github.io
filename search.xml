@@ -3,6 +3,25 @@
   
     
     <entry>
+      <title>打造带 Java 内核的 Jupyter Notebook Docker 镜像</title>
+      <link href="/2018/08/17/%E6%89%93%E9%80%A0%E5%B8%A6-Java-%E5%86%85%E6%A0%B8%E7%9A%84-Jupyter-Notebook-Docker-%E9%95%9C%E5%83%8F/"/>
+      <url>/2018/08/17/%E6%89%93%E9%80%A0%E5%B8%A6-Java-%E5%86%85%E6%A0%B8%E7%9A%84-Jupyter-Notebook-Docker-%E9%95%9C%E5%83%8F/</url>
+      <content type="html"><![CDATA[<blockquote><p>用过 Python 的应该都用过 <a href="http://jupyter.org/" target="_blank" rel="noopener">Jupyter</a>。简单来说，Jupyter 是一个写文档的工具，写出来的文档里面包含可以直接运行的代码。Jupyter 主要用于数据分析和机器学习，所以默认支持的语言是 Python 和 R 之类的。对于 Java 开发者来说，由于 JDK9 开始终于有了名为 JShell 的 PREL，再加上热心大神开发了对应的内核，我们也可以自己动手打造一个可以运行 Java 代码的 Jupyter。</p></blockquote><p>Jupyter 是一个 Web 应用，所以我最终的目的是要打造一个 Docker 镜像。这样就可以方便的部署到云上，以后找个能上网的设备就可以随时写代码了。</p><h2 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h2><ul><li><strong>Docker</strong>，官方安装教程地址: <a href="https://docs.docker.com/install/" target="_blank" rel="noopener">https://docs.docker.com/install/</a> 。</li></ul><a id="more"></a><h2 id="制作流程"><a href="#制作流程" class="headerlink" title="制作流程"></a>制作流程</h2><h3 id="编写-Dockerfile-文件"><a href="#编写-Dockerfile-文件" class="headerlink" title="编写 Dockerfile 文件"></a>编写 Dockerfile 文件</h3><p>新建 <code>Dockerfile</code> 文件，并输入以下内容：</p><figure class="hljs highlight Dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Dockerfile"><span class="hljs-comment"># 选用官方 minimal 版本镜像作为基底</span><br><span class="hljs-keyword">FROM</span> jupyter/minimal-notebook<br><br><span class="hljs-comment"># 以下操作需要 root 权限</span><br><span class="hljs-keyword">USER</span> root<br><br><span class="hljs-comment"># Java 内核要求 JDK 版本不小于 9</span><br><span class="hljs-keyword">RUN</span> apt-get update &amp;&amp; apt-get install -yq openjdk-11-jdk<br><br><span class="hljs-comment"># 安装 Java 内核，最新版本 v1.1.1</span><br><span class="hljs-keyword">RUN</span> mkdir -p /tmp/ijava &amp;&amp; \<br>    cd /tmp/ijava &amp;&amp; \<br>    wget https://github.com/SpencerPark/IJava/releases/download/v1.1.1/ijava-1.1.1.zip &amp;&amp; \<br>    unzip ijava-1.1.1.zip &amp;&amp; \<br>    python install.py --sys-prefix &amp;&amp; \<br>    rm /tmp/ijava -r<br></code></pre></td></tr></table></figure><p>Jupyter 有自己的<a href="https://github.com/jupyter/docker-stacks" target="_blank" rel="noopener">官方 Docker 镜像</a>，分 base, minimal, scipy, r, tensorflow, datascience, pyspark 和 all-spark 8 个版本。其中除了 base 和 minimal，其它都是在 minimal 的基础上针对不同用途添加对应的库制作而成的。这里出于简化和最小化的目的，选用 minimal 作为基础镜像进行制作。</p><p>由于 JDK9 开始才支持 PERL，所以 Java 内核要求 JDK 版本不小于 9。官方镜像用的都是 Ubuntu 的 Linux 镜像，而且最新的镜像都已经上 18.04 的版本。所以这里直接用 <code>apt</code> 安装最新的 <code>openjdk-11-jdk</code>。</p><blockquote><p>虽然名字是 <code>openjdk-11-jdk</code>，但通过 <code>java -version</code> 可以看到还是 JDK10。</p></blockquote><p>Jupyter 官方没有出 Java 内核，这里用到官方推荐的第三方内核 <a href="https://github.com/SpencerPark/IJava" target="_blank" rel="noopener">IJava</a></p><h3 id="制作-Docker-镜像"><a href="#制作-Docker-镜像" class="headerlink" title="制作 Docker 镜像"></a>制作 Docker 镜像</h3><p>这 <code>Dockerfile</code> 所在的文件夹运行以下指令:</p><figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ docker image build -t tuzkimo/jupyter-java .<br></code></pre></td></tr></table></figure><p>-t 用于指定 Docker 镜像的标签名，大家可以改用自己喜欢的名字。不要忘了指令最后是有一个点的。</p><h3 id="运行-Docker-镜像实例"><a href="#运行-Docker-镜像实例" class="headerlink" title="运行 Docker 镜像实例"></a>运行 Docker 镜像实例</h3><p>个人比较喜欢用 <code>docker-compose</code> 运行 Docker 镜像，就算只是一个单独的服务。</p><figure class="hljs highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">version:</span> <span class="hljs-string">'2'</span><br><span class="hljs-attr">services:</span><br><span class="hljs-attr">    jupyter-java:</span><br><span class="hljs-attr">        container_name:</span> <span class="hljs-string">jupyter-java</span><br><span class="hljs-attr">        image:</span> <span class="hljs-string">tuzkimo/jupyter-java</span><br><span class="hljs-attr">        ports:</span><br><span class="hljs-bullet">            -</span> <span class="hljs-number">8888</span><span class="hljs-string">:8888</span><br><span class="hljs-attr">        volumes:</span><br><span class="hljs-bullet">            -</span> <span class="hljs-string">./work:/home/jovyan/work</span><br><span class="hljs-attr">        command:</span> <span class="hljs-string">&gt;<br>            start-notebook.sh<br>            --NotebookApp.password='sha1:772f104e6c00:fd76619ae92f722866127bb59f64d9b8702385b0'<br></span><span class="hljs-attr">        restart:</span> <span class="hljs-string">always</span><br></code></pre></td></tr></table></figure><p>这里我用到入口程序的 <code>--NotebookApp.password</code> 参数直接设定登录密码。这里用到的是加密而且散列处理后的密码，准备密码的方法可以点<a href="https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#preparing-a-hashed-password" target="_blank" rel="noopener">这里</a>看官方文档。</p><p>最后输入以下指令运行镜像：</p><figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ docker-compose up -d<br></code></pre></td></tr></table></figure><p>我们打开浏览器访问 <code>http://localhost:8888</code>，如果看到登录窗代表运行成功，输入设定好的密码就可以愉快使用了。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://s1.ax1x.com/2018/08/20/Ph4F6f.png" alt=""></p><p>效果还是不错的。:)</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Jupyter </tag>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>用 Spotify Docker Maven 插件快速生成 Spring Boot 应用的 Docker 镜像</title>
       <link href="/2018/08/15/Spotifys-Docker-Maven-%E6%8F%92%E4%BB%B6%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90-Spring-Boot-%E5%BA%94%E7%94%A8%E7%9A%84-Docker-%E9%95%9C%E5%83%8F/"/>
       <url>/2018/08/15/Spotifys-Docker-Maven-%E6%8F%92%E4%BB%B6%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90-Spring-Boot-%E5%BA%94%E7%94%A8%E7%9A%84-Docker-%E9%95%9C%E5%83%8F/</url>
@@ -11,9 +30,9 @@
       
         <tags>
             
-            <tag> Spring </tag>
-            
             <tag> Docker </tag>
+            
+            <tag> Spring </tag>
             
         </tags>
       
