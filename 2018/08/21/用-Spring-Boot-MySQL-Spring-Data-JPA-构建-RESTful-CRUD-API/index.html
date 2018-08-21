@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="JAVA, Spring, Vue, Python">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="tuzkimo's blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>用 Spring Boot, MySQL, Spring Data JPA 构建 RESTful CRUD API | tuzkimo's blog</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">tuzkimo's blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+      
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+    <li><a href="/categories/">分类</a></li>
+    
+    <li><a href="/tags/">标签</a></li>
+    
+    <li><a href="/about/">关于</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/08/21/用-Spring-Boot-MySQL-Spring-Data-JPA-构建-RESTful-CRUD-API/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="tuzkimo">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="tuzkimo's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">用 Spring Boot, MySQL, Spring Data JPA 构建 RESTful CRUD API</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-21T10:42:11+08:00">2018-08-21 10:42:11</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <blockquote>
+<p>做后端开发最经常做的就是 CRUD，这次我会用 Spring Boot 做一个超简单的 RESTful CRUD API。</p>
+</blockquote>
+<h2 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h2><ul>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli" target="_blank" rel="noopener">Spring Boot CLI</a></li>
+<li><a href="https://maven.apache.org/install.html" target="_blank" rel="noopener">Maven</a></li>
+<li><a href="https://docs.docker.com/install/" target="_blank" rel="noopener">Docker</a></li>
+</ul>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><ol>
+<li>打开 <strong>Terminal</strong> 并切换到你想存放项目文件的目录；</li>
+<li><p>执行以下命令创建项目：</p>
+ <figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ spring init -a note --name note-demo-api -d=web,data-jpa,mysql,lombok,devtools note<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>导入 IDE。</p>
+<blockquote>
+<p><strong>注意</strong> Lombok 用于消除一些模板代码，需要 IDE 安装插件提供支持，具体请看<a href="https://projectlombok.org/features/all" target="_blank" rel="noopener">官方文档</a>。</p>
+</blockquote>
+</li>
+</ol>
+<a id="more"></a>
+<h2 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h2><p>首先我们要在 MySQL 创建一个名叫 <strong>note</strong> 的数据库。出于简化目的，这一步用 docker 运行一个一次性的 MySQL 容器。</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker run \<br>    --rm \<br>    -d \<br>    -p 3306:3306 \<br>    --name note_db \<br>    --env MYSQL_ROOT_PASSWORD=p123456 \<br>    --env MYSQL_DATABASE=note \<br>    mysql:5.7 \<br>    --character-set-server=utf8mb4 \<br>    --collation-server=utf8mb4_unicode_ci<br></code></pre></td></tr></table></figure>
+<p>接着配置数据源相关参数。为了使用 <strong>yml</strong> 格式，首先把 <strong>application.properties</strong> 文件的后缀名改为 <strong>yml</strong>，然后打开填入以下内容：</p>
+<figure class="hljs highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">spring:</span><br>  <span class="hljs-comment"># 数据源参数</span><br><span class="hljs-attr">  datasource:</span><br><span class="hljs-attr">    url:</span> <span class="hljs-attr">jdbc:mysql://localhost:3306/note?useSSL=false</span><br><span class="hljs-attr">    username:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">    password:</span> <span class="hljs-string">p123456</span><br><br>  <span class="hljs-comment"># JPA/Hibernate 参数</span><br><span class="hljs-attr">  jpa:</span><br><span class="hljs-attr">    hibernate:</span><br>      <span class="hljs-comment"># 指定数据库初始化方式，有 create, create-drop, update, validate 四种方式可选</span><br><span class="hljs-attr">      ddl-auto:</span> <span class="hljs-string">update</span><br><br><span class="hljs-attr">    properties:</span><br><span class="hljs-attr">      hibernate:</span><br>        <span class="hljs-comment"># 指定 Dialect 可以让 Hibernate 根据对应的数据库生成性能更好的 SQL 语句</span><br><span class="hljs-attr">        dialect:</span> <span class="hljs-string">org.hibernate.dialect.MySQL5InnoDBDialect</span><br></code></pre></td></tr></table></figure>
+<h2 id="创建-Note-Model"><a href="#创建-Note-Model" class="headerlink" title="创建 Note Model"></a>创建 Note Model</h2><p>在 <code>com.example.note</code> 里面新建包 <code>model</code>，然后在里面新建类 <code>Note.java</code> 并输入以下内容：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.note.model;<br><br><span class="hljs-keyword">import</span> com.fasterxml.jackson.annotation.JsonIgnoreProperties;<br><span class="hljs-keyword">import</span> lombok.Getter;<br><span class="hljs-keyword">import</span> lombok.Setter;<br><span class="hljs-keyword">import</span> org.springframework.data.annotation.CreatedDate;<br><span class="hljs-keyword">import</span> org.springframework.data.annotation.LastModifiedDate;<br><span class="hljs-keyword">import</span> org.springframework.data.jpa.domain.support.AuditingEntityListener;<br><br><span class="hljs-keyword">import</span> javax.persistence.*;<br><span class="hljs-keyword">import</span> javax.validation.constraints.NotBlank;<br><span class="hljs-keyword">import</span> java.util.Date;<br><br><span class="hljs-meta">@Entity</span><br><span class="hljs-meta">@EntityListeners</span>(AuditingEntityListener.class)<br><span class="hljs-meta">@JsonIgnoreProperties</span>(value = &#123;<span class="hljs-string">"createdAt"</span>, <span class="hljs-string">"updatedAt"</span>&#125;,<br>        allowGetters = <span class="hljs-keyword">true</span>)<br><span class="hljs-meta">@Getter</span><br><span class="hljs-meta">@Setter</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Note</span> </span>&#123;<br><br>    <span class="hljs-meta">@Id</span><br>    <span class="hljs-meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)<br>    <span class="hljs-keyword">private</span> Long id;<br><br>    <span class="hljs-meta">@NotBlank</span><br>    <span class="hljs-keyword">private</span> String title;<br><br>    <span class="hljs-meta">@NotBlank</span><br>    <span class="hljs-keyword">private</span> String content;<br><br>    <span class="hljs-meta">@Column</span>(nullable = <span class="hljs-keyword">false</span>, updatable = <span class="hljs-keyword">false</span>)<br>    <span class="hljs-meta">@Temporal</span>(TemporalType.TIMESTAMP)<br>    <span class="hljs-meta">@CreatedDate</span><br>    <span class="hljs-keyword">private</span> Date createdAt;<br><br>    <span class="hljs-meta">@Column</span>(nullable = <span class="hljs-keyword">false</span>)<br>    <span class="hljs-meta">@Temporal</span>(TemporalType.TIMESTAMP)<br>    <span class="hljs-meta">@LastModifiedDate</span><br>    <span class="hljs-keyword">private</span> Date updatedAt;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>@Entity</code> 用于标记这是一个持久化类；</li>
+<li><code>@Id</code> 用于标记主键；</li>
+<li><code>@GeneratedValue</code> 用于定义主键生成策略，上面的策略对应 MySQL 的 <code>auto_increment</code>；</li>
+<li><code>@NotBlank</code> 用于验证字符串非空及 <code>not null</code>；</li>
+<li><code>@Column</code> 用于定义被标记的 field 映射的数据表列的参数。可以定义名称（name）、长度（length）、可否为 null（nullable）及可否更新（updateable）等参数；</li>
+<li><code>@Temporal</code> 用于标记类型为 <code>java.util.Date</code> 和 <code>java.util.Calendar</code> 的 field。<code>TemporalType.DATE</code> 表示只取日期，<code>TemporalType.TIME</code> 表示只取时间，<code>TemporalType.TIMESTAMP</code> 则表示取完整的日期时间；</li>
+<li><code>@JsonIgnoreProperties</code> 是一个 Jackson 注解。Spring Boot 默认使用 Jackson 序列化实体为 JSON，或者把 JSON 反序列化为实体。该注解用于指定哪些 field 不参与序列化与反序列化。<code>allowGetters</code> 用于控制是否参与序列化，<code>allowSetters</code> 用于控制是否参与反序列化；</li>
+</ul>
+<h2 id="启用-JPA-Auditing"><a href="#启用-JPA-Auditing" class="headerlink" title="启用 JPA Auditing"></a>启用 JPA Auditing</h2><p>为了让 <code>createdAt</code> 和 <code>updatedAt</code> 这两个 field 可以在 model 创建和更新的时候自动生成，分别给它们添加了 <code>@CreatedDate</code> 和 <code>@LastModifiedDate</code> 注解。</p>
+<p>为了让这两个注解生效，还需要进行两个配置：</p>
+<ol>
+<li>给 model 添加 Spring Data JPA 的 <code>AuditingEntityListener</code>。在上一步已经通过给 <code>Note</code> model 添加 <code>@EntityListeners(AuditingEntityListener.class)</code> 注解实现了；</li>
+<li>在主程序启用 JPA Auditing。这一步要在 <code>NoteDemoApiApplication.java</code> 添加 <code>@EnableJpaAuditing</code> 注解。</li>
+</ol>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.note;<br><br><span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;<br><span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;<br><span class="hljs-keyword">import</span> org.springframework.data.jpa.repository.config.EnableJpaAuditing;<br><br><span class="hljs-meta">@SpringBootApplication</span><br><span class="hljs-meta">@EnableJpaAuditing</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NoteDemoApiApplication</span> </span>&#123;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>		SpringApplication.run(NoteDemoApiApplication.class, args);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="创建-NoteRepository-获取数据库数据"><a href="#创建-NoteRepository-获取数据库数据" class="headerlink" title="创建 NoteRepository 获取数据库数据"></a>创建 NoteRepository 获取数据库数据</h2><p>Spring Data JPA 自带一个 <code>JpaRepository</code> 接口，里面已经预定义了很多基本的数据库增删改查（CRUD）的方法，该接口有一个默认的实现类 <code>SimpleJpaRepository</code>，所以我们只要继承 <code>JpaRepository</code> 就可以快速生成自己的 repository 接口。</p>
+<p>首先在 <code>com.example.note</code> 里面新建包 <code>repository</code>，然后在里面新建接口 <code>NoteRepository.java</code> 并输入以下内容：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.note.repository;<br><br><span class="hljs-keyword">import</span> com.example.note.model.Note;<br><span class="hljs-keyword">import</span> org.springframework.data.jpa.repository.JpaRepository;<br><span class="hljs-keyword">import</span> org.springframework.stereotype.Repository;<br><br><span class="hljs-meta">@Repository</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">NoteRepository</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">JpaRepository</span>&lt;<span class="hljs-title">Note</span>, <span class="hljs-title">Long</span>&gt; </span>&#123;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>@Repository</code> 用于标记这是一个 Repository；</li>
+<li>继承 <code>JpaRepository</code> 需要提供对应的 model 和主键的类型。</li>
+</ul>
+<h2 id="创建自定义异常"><a href="#创建自定义异常" class="headerlink" title="创建自定义异常"></a>创建自定义异常</h2><p>用户访问 API 获取一些不存在的资源的时候通常会抛出 <code>404</code> 异常，默认的异常返回信息不太友好，这里我们自己定义一个。</p>
+<p>在 <code>com.example.note</code> 里面新建包 <code>exception</code>，然后在里面新建类 <code>ResourceNotFoundException.java</code> 并输入以下内容：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs undefined">package com.example.note.exception;<br><br>import lombok.Getter;<br>import org.springframework.http.HttpStatus;<br>import org.springframework.web.bind.annotation.ResponseStatus;<br><br>@ResponseStatus(HttpStatus.NOT_FOUND)<br>@Getter<br>public class ResourceNotFoundException extends RuntimeException &#123;<br>    private String resourceName;<br>    private String fieldName;<br>    private String fieldValue;<br><br>    public ResourceNotFoundException(String s, String resourceName, String fieldName, String fieldValue) &#123;<br>        super(String.format(&quot;找不到 %s 为 %s 的 %s&quot;, fieldName, fieldValue, resourceName));<br>        this.resourceName = resourceName;<br>        this.fieldName = fieldName;<br>        this.fieldValue = fieldValue;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>@ResponseStatus</code> 定义当该异常在控制器抛出的时候返回给客户端的 HTTP 状态</li>
+</ul>
+<h2 id="创建-NoteController"><a href="#创建-NoteController" class="headerlink" title="创建 NoteController"></a>创建 NoteController</h2><p>最后一步，我们要创建对笔记进行增删改查的 API。</p>
+<p>首先，在 <code>com.example.note</code> 里面新建包 <code>controller</code>，然后在里面新建类 <code>NoteController.java</code> 并输入以下内容：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.note.controller;<br><br><span class="hljs-keyword">import</span> com.example.note.repository.NoteRepository;<br><span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RestController;<br><br><span class="hljs-meta">@RestController</span><br><span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">"/api/note"</span>)<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NoteController</span> </span>&#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> NoteRepository noteRepository;<br><br>    <span class="hljs-comment">// 获取笔记列表</span><br><br>    <span class="hljs-comment">// 新建笔记</span><br><br>    <span class="hljs-comment">// 获取单个笔记</span><br><br>    <span class="hljs-comment">// 更新笔记</span><br><br>    <span class="hljs-comment">// 删除笔记</span><br><br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>@RestController</code> 是 <code>@Controller</code> 和 <code>@ResponseBody</code> 的合体。<code>@Controller</code> 用于标记这是一个控制器，<code>@ResponseBody</code> 表示该类下面所有的方法的返回都会被默认的格式转换器（默认是 Jackson）序列化为 JSON；</li>
+<li><code>@RequestMapping(&quot;/api/note&quot;)</code> 表示该控制器下定义的所有 API 的 URL 都是 <code>/api/note</code> 开头的。</li>
+</ul>
+<p>下面，我们把 API 逐个完成。</p>
+<h3 id="1-获取所有笔记（GET-api-note）"><a href="#1-获取所有笔记（GET-api-note）" class="headerlink" title="1. 获取所有笔记（GET /api/note）"></a>1. 获取所有笔记（GET /api/note）</h3><figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 获取笔记列表</span><br><span class="hljs-meta">@GetMapping</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Note&gt; <span class="hljs-title">getAllNotes</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> noteRepository.findAll();<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>@GetMapping</code> 是 <code>@RequestMapping(value = &quot;&quot;, method = RequestMethod.GET)</code> 的简写。</li>
+</ul>
+<h3 id="2-新建笔记（POST-api-note）"><a href="#2-新建笔记（POST-api-note）" class="headerlink" title="2. 新建笔记（POST /api/note）"></a>2. 新建笔记（POST /api/note）</h3><figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 新建笔记</span><br><span class="hljs-meta">@PostMapping</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createNote</span><span class="hljs-params">(@Valid @RequestBody Note note)</span> </span>&#123;<br>    noteRepository.save(note);<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>@PostMapping</code> 是 <code>@RequestMapping(value = &quot;&quot;, method = RequestMethod.POST)</code> 的简写；</li>
+<li><code>@RequestBody</code> 表示该 API 接收到的 HTTP 数据体会被反序列化为标记的 model 类型；</li>
+<li><code>@Valid</code> 表示提交的数据需要验证，之前在 <code>Note</code> model 使用的 <code>@NotBlank</code> 就是验证规则，如果验证不通过，就会返回 <code>400 BadRequest</code> 状态给客户端。</li>
+</ul>
+<h3 id="3-获取单个笔记（GET-api-note-noteId-）"><a href="#3-获取单个笔记（GET-api-note-noteId-）" class="headerlink" title="3. 获取单个笔记（GET /api/note/{noteId}）"></a>3. 获取单个笔记（GET /api/note/{noteId}）</h3><figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 获取笔记</span><br><span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">"/&#123;id&#125;"</span>)<br><span class="hljs-function"><span class="hljs-keyword">public</span> Note <span class="hljs-title">getNoteById</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">"id"</span>)</span> Long noteId) </span>&#123;<br>    <span class="hljs-keyword">return</span> noteRepository.findById(noteId)<br>            .orElseThrow(() -&gt; <span class="hljs-keyword">new</span> ResourceNotFoundException(<span class="hljs-string">"笔记"</span>, <span class="hljs-string">"ID"</span>, noteId));<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>@PathVariable</code> 用于把 URL 的一部分作为方法的参数，不指定名称则默认使用参数名；</li>
+<li>由于 Spring Boot 2.X 的 Spring Data JPA 的 <code>findById()</code> 方法返回的是 <code>Optional</code> 对象，所以这里直接调用它的 <code>orElseThrow()</code> 方法，当检索数据库时找不到指定记录，就抛出一个 <code>ResourceNotFoundException</code> 异常。由于之前定义该异常时标记了 <code>@ResponseStatus(value = HttpStatus.NOT_FOUND)</code>，所以抛出该异常时客户端会收到 <code>404 Not Found</code> 错误。</li>
+</ul>
+<h3 id="4-更新笔记（PUT-api-note-noteId-）"><a href="#4-更新笔记（PUT-api-note-noteId-）" class="headerlink" title="4. 更新笔记（PUT /api/note/{noteId}）"></a>4. 更新笔记（PUT /api/note/{noteId}）</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// 更新笔记<br>@PutMapping(&quot;/&#123;id&#125;&quot;)<br>public Note updateNote(@PathVariable(&quot;id&quot;) Long noteId, @Valid @RequestBody Note noteDetail) &#123;<br>    Note note = noteRepository.findById(noteId)<br>            .orElseThrow(() -&gt; new ResourceNotFoundException(&quot;笔记&quot;, &quot;ID&quot;, noteId));<br><br>    note.setTitle(noteDetail.getTitle());<br>    note.setContent(noteDetail.getContent());<br><br>    return noteRepository.save(note);<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>@PutMapping(&quot;/{id}&quot;)</code> 是 <code>@RequestMapping(value = &quot;/{id}&quot;, method = RequestMethod.PUT)</code> 的简写。</li>
+</ul>
+<h3 id="5-删除笔记（DELETE-api-note-noteId-）"><a href="#5-删除笔记（DELETE-api-note-noteId-）" class="headerlink" title="5. 删除笔记（DELETE /api/note/{noteId}）"></a>5. 删除笔记（DELETE /api/note/{noteId}）</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// 删除笔记<br>@DeleteMapping(&quot;/&#123;id&#125;&quot;)<br>public ResponseEntity&lt;?&gt; deleteNote(@PathVariable(&quot;id&quot;) Long noteId) &#123;<br>    Note note = noteRepository.findById(noteId)<br>            .orElseThrow(() -&gt; new ResourceNotFoundException(&quot;笔记&quot;, &quot;ID&quot;, noteId));<br><br>    noteRepository.delete(note);<br><br>    return ResponseEntity.ok().build();<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>@DeleteMapping(&quot;/{id}&quot;)</code> 是 <code>@RequestMapping(value = &quot;/{id}&quot;, method = RequestMethod.DELETE)</code> 的简写。</li>
+</ul>
+<h2 id="运行应用"><a href="#运行应用" class="headerlink" title="运行应用"></a>运行应用</h2><p>我们的应用终于构建完成了，现在是时候运行起来了。</p>
+<p>打开 <code>Terminal</code>，切换到项目路径，运行以下指令：</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ mvn spring-boot:run<br></code></pre></td></tr></table></figure>
+<p>应用顺利运行后默认会监听本地 <code>8080</code> 端口。</p>
+<h2 id="测试-API"><a href="#测试-API" class="headerlink" title="测试 API"></a>测试 API</h2><h3 id="1-通过-POST-api-note-新建笔记"><a href="#1-通过-POST-api-note-新建笔记" class="headerlink" title="1. 通过 POST /api/note 新建笔记"></a>1. 通过 <code>POST /api/note</code> 新建笔记</h3><p>打开 <code>Terminal</code>，运行以下指令：</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ curl -X POST -H <span class="hljs-string">"Content-Type: application/json"</span> -d <span class="hljs-string">'&#123;"title": "我的第一篇笔记", "content": "Spring Boot 真好用！"&#125;'</span> http://localhost:8080/api/note<br></code></pre></td></tr></table></figure>
+<p>预期应该有类似如下返回：</p>
+<figure class="hljs highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,<br>    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"我的第一篇笔记"</span>,<br>    <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Spring Boot 真好用！"</span>,<br>    <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-04-12T03:01:21.187+0000"</span>,<br>    <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-04-12T03:01:21.187+0000"</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="2-通过-GET-api-note-获取笔记列表"><a href="#2-通过-GET-api-note-获取笔记列表" class="headerlink" title="2. 通过 GET /api/note 获取笔记列表"></a>2. 通过 <code>GET /api/note</code> 获取笔记列表</h3><p>首先按第一步的方法再新建一篇笔记，然后运行以下指令：</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ curl -X GET http://localhost:8080/api/note<br></code></pre></td></tr></table></figure>
+<p>预期应该有类似如下返回：</p>
+<figure class="hljs highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs json">[&#123;<br>        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,<br>        <span class="hljs-attr">"title"</span>: <span class="hljs-string">"我的第一篇笔记"</span>,<br>        <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Spring Boot 真好用！"</span>,<br>        <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-04-12T03:01:21.000+0000"</span>,<br>        <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-04-12T03:01:21.000+0000"</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,<br>        <span class="hljs-attr">"title"</span>: <span class="hljs-string">"我的第二篇笔记"</span>,<br>        <span class="hljs-attr">"content"</span>: <span class="hljs-string">"用 Spring Boot 构建 RESTful 真方便！"</span>,<br>        <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-04-12T03:08:21.000+0000"</span>,<br>        <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-04-12T03:08:21.000+0000"</span><br>    &#125;<br>]<br></code></pre></td></tr></table></figure>
+<h3 id="3-通过-GET-api-note-noteId-获取单个笔记"><a href="#3-通过-GET-api-note-noteId-获取单个笔记" class="headerlink" title="3. 通过 GET /api/note/{noteId} 获取单个笔记"></a>3. 通过 <code>GET /api/note/{noteId}</code> 获取单个笔记</h3><p>运行以下指令：</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ curl -X GET http://localhost:8080/api/note/1<br></code></pre></td></tr></table></figure>
+<p>预期应该有类似如下返回：</p>
+<figure class="hljs highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,<br>    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"我的第一篇笔记"</span>,<br>    <span class="hljs-attr">"content"</span>: <span class="hljs-string">"Spring Boot 真好用！"</span>,<br>    <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-04-12T03:01:21.187+0000"</span>,<br>    <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-04-12T03:01:21.187+0000"</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="4-通过-PUT-api-note-noteId-修改笔记"><a href="#4-通过-PUT-api-note-noteId-修改笔记" class="headerlink" title="4. 通过 PUT /api/note/{noteId} 修改笔记"></a>4. 通过 <code>PUT /api/note/{noteId}</code> 修改笔记</h3><p>运行以下指令：</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ curl -X PUT -H <span class="hljs-string">"Content-Type: application/json"</span> -d <span class="hljs-string">'&#123;"title": "我的第二篇笔记", "content": "用 Spring Boot 构建 RESTful 真方便！Spring 一生推！"&#125;'</span> http://localhost:8080/api/note/2<br></code></pre></td></tr></table></figure>
+<p>预期应该有类似如下返回：</p>
+<figure class="hljs highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>    <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,<br>    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"我的第二篇笔记"</span>,<br>    <span class="hljs-attr">"content"</span>: <span class="hljs-string">"用 Spring Boot 构建 RESTful 真方便！Spring 一生推！"</span>,<br>    <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-04-12T03:08:21.000+0000"</span>,<br>    <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-04-12T03:23:54.474+0000"</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="5-通过-DELETE-api-note-noteId-删除笔记"><a href="#5-通过-DELETE-api-note-noteId-删除笔记" class="headerlink" title="5. 通过 DELETE /api/note/{noteId} 删除笔记"></a>5. 通过 <code>DELETE /api/note/{noteId}</code> 删除笔记</h3><p>运行以下指令：</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ curl -X DELETE http://localhost:8080/api/note/2<br></code></pre></td></tr></table></figure>
+<p>预期应该没有错误返回，可以通过 <code>GET /api/note</code> API 进行验证，返回的列表应该只剩一个元素了。</p>
+<h3 id="6-通过获取不存在的资源检验错误返回"><a href="#6-通过获取不存在的资源检验错误返回" class="headerlink" title="6. 通过获取不存在的资源检验错误返回"></a>6. 通过获取不存在的资源检验错误返回</h3><p>我们给 <code>GET /api/note/{noteId}</code> 故意传入一个不存在 <code>noteId</code>，如下：</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ curl -X GET http://localhost:8080/api/note/3<br></code></pre></td></tr></table></figure>
+<p>预期应该有类似如下返回：</p>
+<figure class="hljs highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>    <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2018-04-12T03:34:52.630+0000"</span>,<br>    <span class="hljs-attr">"status"</span>: <span class="hljs-number">404</span>,<br>    <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Not Found"</span>,<br>    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"找不到 ID 为 3 的 笔记"</span>,<br>    <span class="hljs-attr">"path"</span>: <span class="hljs-string">"/api/note/3"</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><ul>
+<li><a href="https://github.com/tuzkimo/note-demo-api" target="_blank" rel="noopener">GitHub</a></li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.callicoder.com/spring-boot-rest-api-tutorial-with-mysql-jpa-hibernate/" target="_blank" rel="noopener">Spring Boot, MySQL, JPA, Hibernate Restful CRUD API Tutorial</a></li>
+</ul>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Spring-Boot/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Spring Boot</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/08/17/打造带-Java-内核的-Jupyter-Notebook-Docker-镜像/" rel="next" title="打造带 Java 内核的 Jupyter Notebook Docker 镜像"><i class="fas fa-angle-left"></i><span class="nav-title">打造带 Java 内核的 Jupyter Notebook Docker 镜像</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.png" alt="tuzkimo">
+  
+  <h1 class="author-name">tuzkimo</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">9</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">0</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">7</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#软件需求"><span class="toc-text">软件需求</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#创建项目"><span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#配置数据库"><span class="toc-text">配置数据库</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#创建-Note-Model"><span class="toc-text">创建 Note Model</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#启用-JPA-Auditing"><span class="toc-text">启用 JPA Auditing</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#创建-NoteRepository-获取数据库数据"><span class="toc-text">创建 NoteRepository 获取数据库数据</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#创建自定义异常"><span class="toc-text">创建自定义异常</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#创建-NoteController"><span class="toc-text">创建 NoteController</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#1-获取所有笔记（GET-api-note）"><span class="toc-text">1. 获取所有笔记（GET /api/note）</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#2-新建笔记（POST-api-note）"><span class="toc-text">2. 新建笔记（POST /api/note）</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-获取单个笔记（GET-api-note-noteId-）"><span class="toc-text">3. 获取单个笔记（GET /api/note/{noteId}）</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#4-更新笔记（PUT-api-note-noteId-）"><span class="toc-text">4. 更新笔记（PUT /api/note/{noteId}）</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#5-删除笔记（DELETE-api-note-noteId-）"><span class="toc-text">5. 删除笔记（DELETE /api/note/{noteId}）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#运行应用"><span class="toc-text">运行应用</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#测试-API"><span class="toc-text">测试 API</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#1-通过-POST-api-note-新建笔记"><span class="toc-text">1. 通过 POST /api/note 新建笔记</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#2-通过-GET-api-note-获取笔记列表"><span class="toc-text">2. 通过 GET /api/note 获取笔记列表</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-通过-GET-api-note-noteId-获取单个笔记"><span class="toc-text">3. 通过 GET /api/note/{noteId} 获取单个笔记</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#4-通过-PUT-api-note-noteId-修改笔记"><span class="toc-text">4. 通过 PUT /api/note/{noteId} 修改笔记</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#5-通过-DELETE-api-note-noteId-删除笔记"><span class="toc-text">5. 通过 DELETE /api/note/{noteId} 删除笔记</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#6-通过获取不存在的资源检验错误返回"><span class="toc-text">6. 通过获取不存在的资源检验错误返回</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#项目地址"><span class="toc-text">项目地址</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/tuzkimo" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">tuzkimo</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+        
+<div class="busuanzi">
+  <span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv"></span></span>
+</div>
+
+
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

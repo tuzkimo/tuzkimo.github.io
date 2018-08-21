@@ -129,6 +129,69 @@
   
   <article class="index-article card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/08/21/用-Spring-Boot-MySQL-Spring-Data-JPA-构建-RESTful-CRUD-API/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="tuzkimo">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="tuzkimo's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/08/21/用-Spring-Boot-MySQL-Spring-Data-JPA-构建-RESTful-CRUD-API/" itemprop="url">用 Spring Boot, MySQL, Spring Data JPA 构建 RESTful CRUD API</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-21T10:42:11+08:00">2018-08-21 10:42:11</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <blockquote>
+<p>做后端开发最经常做的就是 CRUD，这次我会用 Spring Boot 做一个超简单的 RESTful CRUD API。</p>
+</blockquote>
+<h2 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h2><ul>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli" target="_blank" rel="noopener">Spring Boot CLI</a></li>
+<li><a href="https://maven.apache.org/install.html" target="_blank" rel="noopener">Maven</a></li>
+<li><a href="https://docs.docker.com/install/" target="_blank" rel="noopener">Docker</a></li>
+</ul>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><ol>
+<li>打开 <strong>Terminal</strong> 并切换到你想存放项目文件的目录；</li>
+<li><p>执行以下命令创建项目：</p>
+ <figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ spring init -a note --name note-demo-api -d=web,data-jpa,mysql,lombok,devtools note<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>导入 IDE。</p>
+<blockquote>
+<p><strong>注意</strong> Lombok 用于消除一些模板代码，需要 IDE 安装插件提供支持，具体请看<a href="https://projectlombok.org/features/all" target="_blank" rel="noopener">官方文档</a>。</p>
+</blockquote>
+</li>
+</ol>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Spring-Boot/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Spring Boot</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/08/17/打造带-Java-内核的-Jupyter-Notebook-Docker-镜像/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="tuzkimo">
@@ -171,11 +234,11 @@
         
         
         
-        <a class="post-tag button" href="/tags/Java/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Java</a>
+        <a class="post-tag button" href="/tags/Docker/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
         
-        <a class="post-tag button" href="/tags/Jupyter/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Jupyter</a>
+        <a class="post-tag button" href="/tags/Java/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Java</a>
         
-        <a class="post-tag button" href="/tags/Docker/" style="background: #47aaff;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
+        <a class="post-tag button" href="/tags/Jupyter/" style="background: #47aaff;" rel="tag"><i class="fas fa-tags"></i>Jupyter</a>
         
       </div>
       
@@ -229,9 +292,9 @@
         
         
         
-        <a class="post-tag button" href="/tags/Docker/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
+        <a class="post-tag button" href="/tags/Spring/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Spring</a>
         
-        <a class="post-tag button" href="/tags/Spring/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Spring</a>
+        <a class="post-tag button" href="/tags/Docker/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
         
       </div>
       
@@ -564,7 +627,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">8</a></div>
+      <div><a href="/archives/">9</a></div>
     </div>
     
     

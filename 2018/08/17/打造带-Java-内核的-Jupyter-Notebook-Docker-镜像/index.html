@@ -163,7 +163,7 @@
 </ul>
 <a id="more"></a>
 <h2 id="制作流程"><a href="#制作流程" class="headerlink" title="制作流程"></a>制作流程</h2><h3 id="编写-Dockerfile-文件"><a href="#编写-Dockerfile-文件" class="headerlink" title="编写 Dockerfile 文件"></a>编写 Dockerfile 文件</h3><p>新建 <code>Dockerfile</code> 文件，并输入以下内容：</p>
-<figure class="hljs highlight Dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Dockerfile"><span class="hljs-comment"># 选用官方 minimal 版本镜像作为基底</span><br><span class="hljs-keyword">FROM</span> jupyter/minimal-notebook<br><br><span class="hljs-comment"># 以下操作需要 root 权限</span><br><span class="hljs-keyword">USER</span> root<br><br><span class="hljs-comment"># Java 内核要求 JDK 版本不小于 9</span><br><span class="hljs-keyword">RUN</span> apt-get update &amp;&amp; apt-get install -yq openjdk-11-jdk<br><br><span class="hljs-comment"># 安装 Java 内核，最新版本 v1.1.1</span><br><span class="hljs-keyword">RUN</span> mkdir -p /tmp/ijava &amp;&amp; \<br>    cd /tmp/ijava &amp;&amp; \<br>    wget https://github.com/SpencerPark/IJava/releases/download/v1.1.1/ijava-1.1.1.zip &amp;&amp; \<br>    unzip ijava-1.1.1.zip &amp;&amp; \<br>    python install.py --sys-prefix &amp;&amp; \<br>    rm /tmp/ijava -r<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight Dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Dockerfile"><span class="hljs-comment"># 选用官方 minimal 版本镜像作为基底</span><br><span class="hljs-keyword">FROM</span> jupyter/minimal-notebook<br><br><span class="hljs-comment"># 以下操作需要 root 权限</span><br><span class="hljs-keyword">USER</span> root<br><br><span class="hljs-comment"># Java 内核要求 JDK 版本不小于 9</span><br><span class="hljs-keyword">RUN</span><span class="bash"> apt-get update &amp;&amp; apt-get install -yq openjdk-11-jdk<br></span><br><span class="hljs-comment"># 安装 Java 内核，最新版本 v1.1.1</span><br><span class="hljs-keyword">RUN</span><span class="bash"> mkdir -p /tmp/ijava &amp;&amp; \<br>    <span class="hljs-built_in">cd</span> /tmp/ijava &amp;&amp; \<br>    wget https://github.com/SpencerPark/IJava/releases/download/v1.1.1/ijava-1.1.1.zip &amp;&amp; \<br>    unzip ijava-1.1.1.zip &amp;&amp; \<br>    python install.py --sys-prefix &amp;&amp; \<br>    rm /tmp/ijava -r</span><br></code></pre></td></tr></table></figure>
 <p>Jupyter 有自己的<a href="https://github.com/jupyter/docker-stacks" target="_blank" rel="noopener">官方 Docker 镜像</a>，分 base, minimal, scipy, r, tensorflow, datascience, pyspark 和 all-spark 8 个版本。其中除了 base 和 minimal，其它都是在 minimal 的基础上针对不同用途添加对应的库制作而成的。这里出于简化和最小化的目的，选用 minimal 作为基础镜像进行制作。</p>
 <p>由于 JDK9 开始才支持 PERL，所以 Java 内核要求 JDK 版本不小于 9。官方镜像用的都是 Ubuntu 的 Linux 镜像，而且最新的镜像都已经上 18.04 的版本。所以这里直接用 <code>apt</code> 安装最新的 <code>openjdk-11-jdk</code>。</p>
 <blockquote>
@@ -190,11 +190,11 @@
         
         
         
-        <a class="post-tag button" href="/tags/Java/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Java</a>
+        <a class="post-tag button" href="/tags/Docker/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
         
-        <a class="post-tag button" href="/tags/Jupyter/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Jupyter</a>
+        <a class="post-tag button" href="/tags/Java/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Java</a>
         
-        <a class="post-tag button" href="/tags/Docker/" style="background: #47aaff;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
+        <a class="post-tag button" href="/tags/Jupyter/" style="background: #47aaff;" rel="tag"><i class="fas fa-tags"></i>Jupyter</a>
         
       </div>
       
@@ -209,6 +209,8 @@
       
     </div>
     <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/08/21/用-Spring-Boot-MySQL-Spring-Data-JPA-构建-RESTful-CRUD-API/" rel="prev" title="用 Spring Boot, MySQL, Spring Data JPA 构建 RESTful CRUD API"><span class="nav-title">用 Spring Boot, MySQL, Spring Data JPA 构建 RESTful CRUD API</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </div>
@@ -240,7 +242,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">8</a></div>
+      <div><a href="/archives/">9</a></div>
     </div>
     
     
