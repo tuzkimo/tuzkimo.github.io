@@ -12,6 +12,16 @@
       
       
       
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+            <tag> i18n </tag>
+            
+            <tag> enum </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -46,11 +56,11 @@
       
         <tags>
             
-            <tag> Docker </tag>
-            
             <tag> Java </tag>
             
             <tag> Jupyter </tag>
+            
+            <tag> Docker </tag>
             
         </tags>
       
@@ -69,9 +79,9 @@
       
         <tags>
             
-            <tag> Spring </tag>
-            
             <tag> Docker </tag>
+            
+            <tag> Spring </tag>
             
         </tags>
       
