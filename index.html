@@ -129,6 +129,63 @@
   
   <article class="index-article card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2019/01/11/用-Spring-Boot-加-i18n-实现-enum-多语言/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="tuzkimo">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="tuzkimo's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/01/11/用-Spring-Boot-加-i18n-实现-enum-多语言/" itemprop="url">用 Spring Boot 加 i18n 实现 enum 多语言</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-11T14:49:18+08:00">2019-01-11 14:49:18</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <blockquote>
+<p>在平常开发中，为了对接前端的表单的单选组件的选项，我通常会用 enum 作为对应参数。最近项目需要升级为多语言，我分享一下我的实现方法。</p>
+</blockquote>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>在终端用 spring-cli 快速生成。</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ spring init -d=web enum-i18n<br></code></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>先在 resources 路径新建两个 ResourceBundle 配置文件，分别对应简体中文和英文。</p>
+<figure class="hljs highlight plain"><figcaption><span>status_zh_CN.properties </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs properties">NEW = 新建<br>COMPLETED = 完成<br>CANCEL = 取消<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><figcaption><span>status_en.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs properties">NEW = new<br>COMPLETED = completed<br>CANCEL = cancel<br></code></pre></td></tr></table></figure>
+<p>然后在应用配置文件指定默认 locale 为 <code>zh_CN</code>, 其实这里还有一个 <code>locale-resolver</code> 配置项用来指定解释 locale 的默认方式，但由于默认配置就是 <code>accept-header</code>, 已经符合需求了，就不用显式配置了。</p>
+<figure class="hljs highlight yml"><figcaption><span>application.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">spring:</span><br><span class="hljs-attr">  mvc:</span><br><span class="hljs-attr">    locale:</span> <span class="hljs-string">zh_CN</span><br></code></pre></td></tr></table></figure>
+<h2 id="DOMAIN"><a href="#DOMAIN" class="headerlink" title="DOMAIN"></a>DOMAIN</h2><p>接下来是 enum 文件，跟普通的比就是多了对 <code>toString()</code> 方法的重写。这里通过调用 <code>LocaleContext</code> 的 locale 属性，动态匹配需要显示的名称。</p>
+<figure class="hljs highlight java"><figcaption><span>Status.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.enumi18n;<br><br><span class="hljs-keyword">import</span> org.springframework.context.i18n.LocaleContextHolder;<br><br><span class="hljs-keyword">import</span> java.util.Locale;<br><span class="hljs-keyword">import</span> java.util.ResourceBundle;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> Status &#123;<br>    NEW, COMPLETED, CANCEL;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>&#123;<br>        Locale locale = LocaleContextHolder.getLocale();<br>        ResourceBundle bundle = ResourceBundle.getBundle(<span class="hljs-string">"status"</span>, locale);<br>        <span class="hljs-keyword">return</span> bundle.getString(<span class="hljs-keyword">this</span>.name());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="CONTROLLER"><a href="#CONTROLLER" class="headerlink" title="CONTROLLER"></a>CONTROLLER</h2><p>然后是 rest controller，这里我们遍历所有的 status 并把他们转换为 name 为键，显示名为 value 的 map, 其中显示名可以根据传入的 <code>Accept-Language</code> header 切换为对应语言的名字。</p>
+<figure class="hljs highlight java"><figcaption><span>StatusController.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.enumi18n;<br><br><span class="hljs-keyword">import</span> org.springframework.http.ResponseEntity;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.GetMapping;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RestController;<br><br><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-keyword">import</span> java.util.stream.Collectors;<br><br><span class="hljs-meta">@RestController</span><br><span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">"/api"</span>)<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StatusController</span> </span>&#123;<br><br>    <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">"status"</span>)<br>    <span class="hljs-keyword">public</span> ResponseEntity&lt;?&gt; getAllAvailableStatus() &#123;<br>        <span class="hljs-keyword">return</span> ResponseEntity.ok(<br>                Arrays<br>                        .stream(Status.values())<br>                        .collect(Collectors.toMap(Enum::name, Status::toString))<br>        );<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>最后我们把项目跑起来测试一下，以下是测试效果。</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ curl -X GET <span class="hljs-string">'http://localhost:8080/api/status'</span><br>-&gt; &#123;<span class="hljs-string">"NEW"</span>:<span class="hljs-string">"新建"</span>,<span class="hljs-string">"COMPLETED"</span>:<span class="hljs-string">"完成"</span>,<span class="hljs-string">"CANCEL"</span>:<span class="hljs-string">"取消"</span>&#125;<br></code></pre></td></tr></table></figure>
+<p>由于指定了默认 locale 是简体中文，所以不指定 <code>Accept-Language</code> 头的情况下默认显示中文。</p>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ curl -X GET -H <span class="hljs-string">'Accept-Language: en'</span> <span class="hljs-string">'http://localhost:8080/api/status'</span><br>-&gt; &#123;<span class="hljs-string">"NEW"</span>:<span class="hljs-string">"new"</span>,<span class="hljs-string">"COMPLETED"</span>:<span class="hljs-string">"completed"</span>,<span class="hljs-string">"CANCEL"</span>:<span class="hljs-string">"cancel"</span>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">$ curl -X GET -H <span class="hljs-string">'Accept-Language: zh-CN'</span> <span class="hljs-string">'http://localhost:8080/api/status'</span><br>-&gt; &#123;<span class="hljs-string">"NEW"</span>:<span class="hljs-string">"新建"</span>,<span class="hljs-string">"COMPLETED"</span>:<span class="hljs-string">"完成"</span>,<span class="hljs-string">"CANCEL"</span>:<span class="hljs-string">"取消"</span>&#125;<br></code></pre></td></tr></table></figure>
+<p>这里有个坑浪费了我很多时间，在 http 头的 <code>Accept-Language</code> 头信息语言代码和地区代码中间是用 <code>-</code> 不是 <code>_</code> 分开的，跟 JAVA 的不一样。</p>
+<h2 id="项目源码"><a href="#项目源码" class="headerlink" title="项目源码"></a>项目源码</h2><p><a href="https://github.com/tuzkimo/enum-i18n" target="_blank" rel="noopener">https://github.com/tuzkimo/enum-i18n</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/08/21/用-Spring-Boot-MySQL-Spring-Data-JPA-构建-RESTful-CRUD-API/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="tuzkimo">
@@ -627,7 +684,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">9</a></div>
+      <div><a href="/archives/">10</a></div>
     </div>
     
     
@@ -704,7 +761,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <div class="copyright">
-          <span class="author">tuzkimo</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+          <span class="author">tuzkimo</span><span class="year"><i class="far fa-copyright"></i>2019</span>
         </div>
         
         

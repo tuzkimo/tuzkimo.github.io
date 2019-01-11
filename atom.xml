@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.tuzkimo.com/"/>
-  <updated>2018-08-21T03:01:38.511Z</updated>
+  <updated>2019-01-11T08:23:29.298Z</updated>
   <id>http://blog.tuzkimo.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用 Spring Boot 加 i18n 实现 enum 多语言</title>
+    <link href="http://blog.tuzkimo.com/2019/01/11/%E7%94%A8-Spring-Boot-%E5%8A%A0-i18n-%E5%AE%9E%E7%8E%B0-enum-%E5%A4%9A%E8%AF%AD%E8%A8%80/"/>
+    <id>http://blog.tuzkimo.com/2019/01/11/用-Spring-Boot-加-i18n-实现-enum-多语言/</id>
+    <published>2019-01-11T06:49:18.000Z</published>
+    <updated>2019-01-11T08:23:29.298Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;在平常开发中，为了对接前端的表单的单选组件的选项，我通常会用 enum 作为对应参数。最近项目需要升级为多语言，我分享一下我的实现方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;创建项目&quot;&gt;&lt;a href=&quot;#创建项目&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>用 Spring Boot, MySQL, Spring Data JPA 构建 RESTful CRUD API</title>
