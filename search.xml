@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Spring 0 到 1 (1) - 创建项目</title>
+      <link href="/2019/05/09/Spring-0-%E5%88%B0-1-1-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/"/>
+      <url>/2019/05/09/Spring-0-%E5%88%B0-1-1-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul><li>Debian 9</li><li>JDK 11</li><li>MAVEN</li><li>SDKMAN!</li><li>Spring Boot CLI</li></ul><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol><li><p>更新 <code>Spring Boot CLI</code></p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sdk ug springboot<br></code></pre></td></tr></table></figure></li><li><p>创建 <code>Spring Boot</code> 项目</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">spring init -a spring-scratch -g cn.tuzkimo -n spring-scratch -j 11 spring-scratch<br></code></pre></td></tr></table></figure></li><li><p>运行项目</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> spring-scratch/<br>mvn spring-boot:run<br></code></pre></td></tr></table></figure></li><li><p>看到 <code>BUILD SUCCESS</code> 说明项目构建成功</p></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>用 Spring Boot 加 i18n 实现 enum 多语言</title>
       <link href="/2019/01/11/%E7%94%A8-Spring-Boot-%E5%8A%A0-i18n-%E5%AE%9E%E7%8E%B0-enum-%E5%A4%9A%E8%AF%AD%E8%A8%80/"/>
       <url>/2019/01/11/%E7%94%A8-Spring-Boot-%E5%8A%A0-i18n-%E5%AE%9E%E7%8E%B0-enum-%E5%A4%9A%E8%AF%AD%E8%A8%80/</url>
@@ -56,11 +75,11 @@
       
         <tags>
             
-            <tag> Docker </tag>
-            
             <tag> Java </tag>
             
             <tag> Jupyter </tag>
+            
+            <tag> Docker </tag>
             
         </tags>
       
@@ -79,9 +98,9 @@
       
         <tags>
             
-            <tag> Spring </tag>
-            
             <tag> Docker </tag>
+            
+            <tag> Spring </tag>
             
         </tags>
       

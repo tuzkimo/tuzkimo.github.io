@@ -129,6 +129,71 @@
   
   <article class="index-article card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2019/05/09/Spring-0-到-1-1-创建项目/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="tuzkimo">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="tuzkimo's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/05/09/Spring-0-到-1-1-创建项目/" itemprop="url">Spring 0 到 1 (1) - 创建项目</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-09T09:32:46+08:00">2019-05-09 09:32:46</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li>Debian 9</li>
+<li>JDK 11</li>
+<li>MAVEN</li>
+<li>SDKMAN!</li>
+<li>Spring Boot CLI</li>
+</ul>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol>
+<li><p>更新 <code>Spring Boot CLI</code></p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sdk ug springboot<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>创建 <code>Spring Boot</code> 项目</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">spring init -a spring-scratch -g cn.tuzkimo -n spring-scratch -j 11 spring-scratch<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>运行项目</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> spring-scratch/<br>mvn spring-boot:run<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>看到 <code>BUILD SUCCESS</code> 说明项目构建成功</p>
+</li>
+</ol>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Spring-Boot/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Spring Boot</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2019/01/11/用-Spring-Boot-加-i18n-实现-enum-多语言/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="tuzkimo">
@@ -290,11 +355,11 @@
         
         
         
-        <a class="post-tag button" href="/tags/Docker/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
+        <a class="post-tag button" href="/tags/Java/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Java</a>
         
-        <a class="post-tag button" href="/tags/Java/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Java</a>
+        <a class="post-tag button" href="/tags/Jupyter/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Jupyter</a>
         
-        <a class="post-tag button" href="/tags/Jupyter/" style="background: #47aaff;" rel="tag"><i class="fas fa-tags"></i>Jupyter</a>
+        <a class="post-tag button" href="/tags/Docker/" style="background: #47aaff;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
         
       </div>
       
@@ -348,9 +413,9 @@
         
         
         
-        <a class="post-tag button" href="/tags/Spring/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Spring</a>
+        <a class="post-tag button" href="/tags/Docker/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
         
-        <a class="post-tag button" href="/tags/Docker/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
+        <a class="post-tag button" href="/tags/Spring/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Spring</a>
         
       </div>
       
@@ -607,54 +672,10 @@
     </footer>
   </article>
   
-  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/07/31/用-alternativeTo-寻找替换软件/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="tuzkimo">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="/images/myavatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="tuzkimo's blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/07/31/用-alternativeTo-寻找替换软件/" itemprop="url">用 alternativeTo 寻找替换软件</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-31T16:16:05+08:00">2018-07-31 16:16:05</time></span>
-        </span>
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <blockquote>
-<p>不知道大家有没有这样的烦恼，在网上看到别人推荐的好软件，然后发现有要收费的、有 Mac/iOS 平台独占的，然后就想如果有类似的替代产品就好了。不经意间发现的 <a href="https://alternativeto.net/" target="_blank" rel="noopener">alternativeTo</a> 完全满足了我的需求。</p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2018/07/31/Pdz2IP.png" alt=""></p>
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/Tool/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Tool</a>
-        
-      </div>
-      
-    </footer>
-  </article>
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a>
+  </nav>
   
   
 </div>
@@ -683,7 +704,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">10</a></div>
+      <div><a href="/archives/">11</a></div>
     </div>
     
     
