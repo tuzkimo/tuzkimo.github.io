@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Spring 0 到 1 (2) - Git 托管</title>
+      <link href="/2019/05/10/Spring-0-%E5%88%B0-1-2-Git-%E6%89%98%E7%AE%A1/"/>
+      <url>/2019/05/10/Spring-0-%E5%88%B0-1-2-Git-%E6%89%98%E7%AE%A1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul><li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></li><li><a href="https://hub.github.com/" target="_blank" rel="noopener">hub</a></li></ul><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol><li><p>创建本地 <code>Git</code> 仓库</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> &lt;项目目录&gt;<br>git init<br>git add .<br>git commit -m <span class="hljs-string">'init'</span><br></code></pre></td></tr></table></figure></li><li><p>创建远程 <code>Git</code> 仓库，<a href="https://github.com/" target="_blank" rel="noopener">Github</a> 为例</p><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hub create<br>git push origin master<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Spring 0 到 1 (1) - 创建项目</title>
       <link href="/2019/05/09/Spring-0-%E5%88%B0-1-1-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/"/>
       <url>/2019/05/09/Spring-0-%E5%88%B0-1-1-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/</url>

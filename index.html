@@ -129,6 +129,65 @@
   
   <article class="index-article card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2019/05/10/Spring-0-到-1-2-Git-托管/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="tuzkimo">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="tuzkimo's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/05/10/Spring-0-到-1-2-Git-托管/" itemprop="url">Spring 0 到 1 (2) - Git 托管</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-10T09:08:32+08:00">2019-05-10 09:08:32</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
+<li><a href="https://hub.github.com/" target="_blank" rel="noopener">hub</a></li>
+</ul>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol>
+<li><p>创建本地 <code>Git</code> 仓库</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> &lt;项目目录&gt;<br>git init<br>git add .<br>git commit -m <span class="hljs-string">'init'</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>创建远程 <code>Git</code> 仓库，<a href="https://github.com/" target="_blank" rel="noopener">Github</a> 为例</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hub create<br>git push origin master<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Spring-Boot/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Spring Boot</a>
+        
+        <a class="post-tag button" href="/tags/Git/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Git</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2019/05/09/Spring-0-到-1-1-创建项目/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="tuzkimo">
@@ -622,56 +681,6 @@
     </footer>
   </article>
   
-  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2018/08/01/用-FileSaver-js-实现客户端文件保存功能/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="tuzkimo">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="/images/myavatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="tuzkimo's blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/08/01/用-FileSaver-js-实现客户端文件保存功能/" itemprop="url">用 FileSaver.js 实现客户端文件保存功能</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-01T15:46:46+08:00">2018-08-01 15:46:46</time></span>
-        </span>
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <blockquote>
-<p>最近在做前端开发的时候需要实现文件下载功能，秉着不重复开发的理念，找到了一个十分方便的库，就是今天想向大家介绍的 <a href="https://github.com/eligrey/FileSaver.js/" target="_blank" rel="noopener">FileSaver.js</a>。</p>
-</blockquote>
-<p>据开发者 <a href="https://eligrey.com/" target="_blank" rel="noopener">Eli Grey</a> 的<a href="https://eligrey.com/blog/saving-generated-files-on-the-client-side/" target="_blank" rel="noopener">博文</a>的说法，原本 W3C 在制定 HTML5 的时候原本是包含 <code>saveAs()</code> 这个 File API 的，但后来又放弃了，还好作者自己实现了一个，才有现在的 FileSaver.js。</p>
-<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><figure class="hljs highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># NPM</span><br>$ npm install file-saver --save<br><br><span class="hljs-comment"># NPM 淘宝源</span><br>$ cnpm install file-saver --save<br><br><span class="hljs-comment"># Bower</span><br>$ bower install file-saver<br></code></pre></td></tr></table></figure>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">FileSaver saveAs(Blob/File data, optional DOMString filename, optional Boolean disableAutoBOM)<br></code></pre></td></tr></table></figure>
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a>
@@ -704,7 +713,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">11</a></div>
+      <div><a href="/archives/">12</a></div>
     </div>
     
     
@@ -722,7 +731,7 @@
     
     <div class="tags-count">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">9</a></div>
+      <div><a href="/tags/">10</a></div>
     </div>
     
   </div>

@@ -47,7 +47,7 @@
     
     
 <link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/tag.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
@@ -82,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>标签: Docker | tuzkimo's blog</title>
+    <title>Spring 0 到 1 (2) - Git 托管 | tuzkimo's blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -127,30 +127,74 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tag" class="tag">
-  <h1 class="tag-title">Docker</h1>
+<div id="post" class="post">
   
-  <article class="tag-article card" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/08/17/打造带-Java-内核的-Jupyter-Notebook-Docker-镜像/" itemprop="url">打造带 Java 内核的 Jupyter Notebook Docker 镜像</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-17T14:19:24+08:00">08-17</time>
-    </span>
-    
+  <article class="post-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://blog.tuzkimo.com/2019/05/10/Spring-0-到-1-2-Git-托管/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="tuzkimo">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="tuzkimo's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Spring 0 到 1 (2) - Git 托管</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-10T09:08:32+08:00">2019-05-10 09:08:32</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
+<li><a href="https://hub.github.com/" target="_blank" rel="noopener">hub</a></li>
+</ul>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol>
+<li><p>创建本地 <code>Git</code> 仓库</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> &lt;项目目录&gt;<br>git init<br>git add .<br>git commit -m <span class="hljs-string">'init'</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>创建远程 <code>Git</code> 仓库，<a href="https://github.com/" target="_blank" rel="noopener">Github</a> 为例</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hub create<br>git push origin master<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Spring-Boot/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Spring Boot</a>
+        
+        <a class="post-tag button" href="/tags/Git/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>Git</a>
+        
+      </div>
+      
+    </footer>
   </article>
   
-  <article class="tag-article card" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/08/15/Spotifys-Docker-Maven-插件快速生成-Spring-Boot-应用的-Docker-镜像/" itemprop="url">用 Spotify Docker Maven 插件快速生成 Spring Boot 应用的 Docker 镜像</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-15T12:21:05+08:00">08-15</time>
-    </span>
-    
-  </article>
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2019/05/09/Spring-0-到-1-1-创建项目/" rel="next" title="Spring 0 到 1 (1) - 创建项目"><i class="fas fa-angle-left"></i><span class="nav-title">Spring 0 到 1 (1) - 创建项目</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+    </div>
+  </div>
   
   
 </div>
@@ -210,6 +254,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#准备"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#流程"><span class="toc-text">流程</span></a></li></ol></div>
+</div>
+
+
+
     
     
     
