@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>IIS 反向代理</title>
+      <link href="/2019/09/26/IIS-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
+      <url>/2019/09/26/IIS-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul><li>IIS 版本为 7 以上</li></ul><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol><li><p>安装 <strong>ARR(Application Request Routing)</strong>，地址 <a href="https://www.iis.net/downloads/microsoft/application-request-routing" target="_blank" rel="noopener">https://www.iis.net/downloads/microsoft/application-request-routing</a></p></li><li><p>启用代理</p><ol><li><p>安装完成后，打开 IIS 控制器，会看到多了 <strong>Application Request Routing Cache</strong> 和 <strong>URL 重写</strong> 两个新功能，打开 <strong>Application Request Routing Cache</strong> 功能；</p><p><img src="https://s2.ax1x.com/2019/09/26/uma0Ve.png" alt=""></p></li><li><p>点击右边栏的 <strong>Server Proxy Settings</strong>，把 <strong>Enable proxy</strong> 和 <strong>Keep alive</strong> 都勾上并应用；</p><p><img src="https://s2.ax1x.com/2019/09/26/umjnbt.png" alt=""></p></li><li><p>新建一个网址作为对外访问的入口，这里以 <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 为例；</p><p><img src="https://s2.ax1x.com/2019/09/26/umb1dU.png" alt=""></p><ul><li>如无特殊，IP 地址为服务器的公网 IP 地址</li><li>主机名应为 DNS 可正常解释到对应 IP 地址的域名</li></ul></li><li><p>选中新建的网站，打开 <strong>URL 重写</strong>功能，点击右边栏的<strong>添加规则</strong>，选择<strong>入站规则</strong>的<strong>空白规则</strong>并确定；</p><p><img src="https://s2.ax1x.com/2019/09/26/umjDGF.png" alt=""></p></li><li><p>给规则改个名字，模式处填 <code>^(.*)</code>，代表匹配所有 URL 字符串，再重写 URL 那里填需要代理的本地应用的地址，这里以 <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 为例，<code>{R:1}</code> 代表匹配到的 URL 字符串；</p><p><img src="https://s2.ax1x.com/2019/09/26/umOSz9.png" alt=""></p></li><li><p>应用配置以后就可以试效果了，访问前要确保对外提供访问的端口没有被防火墙拦截。</p></li></ol></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> IIS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>spring 0 到 1 (3) - CRUD RESTful</title>
+      <link href="/2019/05/13/spring-0-%E5%88%B0-1-3-CRUD-RESTful/"/>
+      <url>/2019/05/13/spring-0-%E5%88%B0-1-3-CRUD-RESTful/</url>
+      
+        <content type="html"><![CDATA[<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>做一个用户增删改查服务，并通过 REST 接口提供网络调用。</p><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul><li>JDK 11</li><li>MAVEN</li><li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a></li><li><a href="https://spring.io/tools" target="_blank" rel="noopener">STS</a></li></ul><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol><li>添加依赖<ol><li>用 <code>STS</code> 打开之前创建的 <code>spring-scratch</code> 项目</li><li>定位到 <code>pom.xml</code></li><li></li></ol></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Spring 0 到 1 (2) - Git 托管</title>
       <link href="/2019/05/10/Spring-0-%E5%88%B0-1-2-Git-%E6%89%98%E7%AE%A1/"/>
       <url>/2019/05/10/Spring-0-%E5%88%B0-1-2-Git-%E6%89%98%E7%AE%A1/</url>
@@ -247,9 +285,9 @@
     
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -258,9 +296,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
